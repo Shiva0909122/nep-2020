@@ -19,6 +19,19 @@
 .custom-context{margin:12px 0 4px;padding:12px 15px;border-radius:12px;background:#f0efff;color:#48418d;font-size:13px;font-weight:700}
 @media(max-width:650px){.repeat-row{grid-template-columns:1fr}.repeat-row.dialogue-row{grid-template-columns:1fr}.live-editor{padding:15px}}
 
+
+.count-steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0}
+.count-step{min-width:42px;height:42px;padding:0 10px;border-radius:12px;background:#a99df8;color:#2e246f;display:grid;place-items:center;font-size:18px;font-weight:900}
+.count-step.start{background:#202849;color:#fff}
+.count-step.finish{background:#9be0d0;color:#155a4c}
+.count-arrow{font-weight:900;color:#7771a8}
+.compact-fields{gap:12px}
+.compact-fields .field label{font-size:13px}
+.compact-fields input,.compact-fields textarea{padding:11px;font-size:15px}
+.live-editor{padding:17px}
+.live-editor-head h3{font-size:21px;margin:7px 0}
+@media(max-width:600px){.count-step{min-width:36px;height:38px;font-size:16px}.count-steps{gap:5px}.live-editor{padding:13px}}
+
 </style></head><body>
 <div class="top"><div class="wrap nav"><div class="brand">MATH<span>IN</span>MOTION <span style="color:#9aa1b5">/ LEARNING LAB</span></div><div class="navlinks"><a href="#shift">Before/After</a><a href="#frameworks">Frameworks</a><a href="#studio">Role-play</a><a href="#hpc">HPC</a><a href="#zoom">Zoom plan</a></div><div class="toolbar" style="margin:0"><button class="btn alt" onclick="document.body.classList.toggle('present')">◉ Presenter mode</button><button class="btn light" onclick="print()">Print / PDF</button></div></div></div>
 <header class="hero"><div class="wrap"><div class="eyebrow">A practical mathematics demonstration · Zoom-ready</div><h1>Make maths <em>move.</em><br>Make learning visible.</h1><p>A customizable role-play lesson that turns addition, subtraction, multiplication and division into real-life experiences, while making the connection to NEP 2020, NCF and the Holistic Progress Card (HPC) crystal clear.</p><div class="actions"><a class="btn" href="#studio" style="text-decoration:none">Enter the role-play studio ↓</a><a class="btn alt" href="#frameworks" style="text-decoration:none">Understand the frameworks</a><button class="btn light" onclick="resetSettings()">Reset sample</button></div><div class="tiles"><div class="tile"><i>🧱</i><b>Addition +</b><small>Join quantities</small></div><div class="tile"><i>🧺</i><b>Subtraction −</b><small>Take away / compare</small></div><div class="tile"><i>🌱</i><b>Multiplication ×</b><small>Equal groups</small></div><div class="tile"><i>🍪</i><b>Division ÷</b><small>Share equally</small></div></div></div></header>
@@ -29,38 +42,28 @@
 <section id="studio"><div class="wrap"><div class="head"><div><div class="eyebrow">04 / Interactive role-play studio</div><h2>Run a mini maths marketplace.</h2></div><p>Pick an operation. The story, characters, dialogue and maths model update. Use it live or customize the setting and learner details.</p></div><div class="edit"><h3>🎛 Customize your Zoom demonstration</h3><div class="fields"><div class="field"><label>Presenter / teacher name</label><input id="teacher" value="Teacher Maya" oninput="updateTeacher()"></div><div class="field"><label>School / program name</label><input id="school" value="Bright Minds Learning Club"></div><div class="field"><label>Target class</label><select id="grade" onchange="gradeChange()"><option>Grade 1–2</option><option selected>Grade 3–5</option><option>Grade 6–8</option></select></div><div class="field"><label>Story setting</label><input id="setting" value="Classroom fruit and snack market"></div><div class="field"><label>Tokens / currency name</label><input id="currency" value="tokens"></div><div class="field"><label>Learning objective</label><input id="objective" value="Understand the meaning behind each operation" oninput="renderObjective()"></div></div>
 <div class="live-editor" id="liveEditor">
   <div class="live-editor-head">
-    <div>
-      <span class="tag">LIVE CONTENT EDITOR</span>
-      <h3>Make changes and watch the lesson update</h3>
-      <p class="small">Every change below updates the lesson preview immediately.</p>
-    </div>
-    <button class="btn light" type="button" onclick="resetCurrentLesson()">Reset this activity</button>
+    <div><span class="tag">QUICK EDIT</span><h3>Change your lesson</h3></div>
+    <button class="btn light" type="button" onclick="resetCurrentLesson()">Reset</button>
   </div>
-  <div class="fields">
-    <div class="field"><label for="editStoryTitle">Activity heading</label><input id="editStoryTitle" type="text"></div>
-    <div class="field"><label for="editEmoji">Activity icon / emoji</label><input id="editEmoji" type="text" maxlength="8"></div>
-    <div class="field full"><label for="editStory">Story / real-life question</label><textarea id="editStory" rows="3"></textarea></div>
-    <div class="field"><label for="editA">First number</label><input id="editA" type="number" min="0" step="1"></div>
-    <div class="field"><label for="editB">Second number</label><input id="editB" type="number" min="1" step="1"></div>
-    <div class="field full"><p class="small" id="numberHelp">Change the numbers to update the equation and counters.</p></div>
-    <div class="field full"><label for="editModel">How learners model it</label><input id="editModel" type="text"></div>
-    <div class="field full"><label for="editPrompt">Teacher question / prompt</label><textarea id="editPrompt" rows="2"></textarea></div>
-    <div class="field full"><label for="editEvidence">What the teacher should observe (HPC evidence)</label><textarea id="editEvidence" rows="2"></textarea></div>
+  <div class="fields compact-fields">
+    <div class="field"><label for="editStoryTitle">Title</label><input id="editStoryTitle" type="text"></div>
+    <div class="field"><label for="editEmoji">Picture / emoji</label><input id="editEmoji" type="text" maxlength="8"></div>
+    <div class="field full"><label for="editStory">Question / story</label><textarea id="editStory" rows="2"></textarea></div>
+    <div class="field"><label for="editA">Start number</label><input id="editA" type="number" min="0" step="1"></div>
+    <div class="field"><label for="editB">Add / take away</label><input id="editB" type="number" min="1" step="1"></div>
+    <div class="field full"><label for="editModel">Short instruction</label><input id="editModel" type="text"></div>
   </div>
-  <div class="editor-subhead"><h4>Role-play characters</h4><button class="btn light" type="button" onclick="addRole()">＋ Add character</button></div>
-  <div id="roleEditor" class="repeat-editor"></div>
-  <div class="editor-subhead"><h4>Dialogue / role-play script</h4><button class="btn light" type="button" onclick="addDialogue()">＋ Add dialogue line</button></div>
-  <div id="dialogueEditor" class="repeat-editor"></div>
-  <div class="live-status" id="saveStatus" aria-live="polite">Changes update live and save in this browser.</div>
+  <p class="small">Edit any box. The lesson changes straight away.</p>
+  <div class="live-status" id="saveStatus" aria-live="polite">Edits save on this device.</div>
 </div>
 </div><div class="custom-context" id="customContext" aria-live="polite"></div>
-<div class="pills" id="opTabs"><button class="pill active" onclick="choose('add',this)">＋ Addition</button><button class="pill" onclick="choose('sub',this)">− Subtraction</button><button class="pill" onclick="choose('mul',this)">× Multiplication</button><button class="pill" onclick="choose('div',this)">÷ Division</button></div><div class="lesson"><div class="lessonTop"><div><span class="tag" id="opTag" style="background:#ffffff2b;color:white">OPERATION 01</span><h2 id="title">The fruit stall: Addition</h2><p id="subtitle">Combining two quantities to find a total</p></div><div id="emoji" style="font-size:58px">🍎</div></div><div class="lessonBody"><div class="scenario"><div class="story"><span class="tag">Real-life challenge</span><h3 id="storyTitle">The fruit stall gets a delivery</h3><p id="story">Aarav has 4 apples. Maya brings 3 more apples to the stall. How many apples are there altogether?</p><div class="equation" id="equation">4 + 3 = 7</div><div class="blocks" id="blocks"></div><p class="small" id="model">Model: join both groups. Count all the objects.</p></div><div><span class="tag">Learning objective</span><p id="objectiveShow">Understand the meaning behind each operation</p><span class="tag">Teacher prompt</span><div class="scriptbox" id="prompt">“What do you notice when we bring the two groups together? How can we prove the total?”</div><span class="tag">Look for evidence</span><p class="muted" id="evidence">Child counts accurately, combines groups, explains that addition joins quantities and represents the total.</p></div></div><h3 style="margin-top:23px">🎭 Character cast</h3><div class="roles" id="roles"></div><h3>🎬 Role-play script</h3><ol id="script"></ol><div class="note"><b>Framework connection:</b> <span id="frameworkNote"></span></div></div></div><div class="toolbar"><button class="btn" onclick="nextOp()">Next operation →</button><button class="btn alt" onclick="copyScript()">Copy role-play script</button><button class="btn light" onclick="print()">Print this lesson</button></div></div></section>
+<div class="pills" id="opTabs"><button class="pill active" onclick="choose('add',this)">＋ Addition</button><button class="pill" onclick="choose('sub',this)">− Subtraction</button><button class="pill" onclick="choose('mul',this)">× Multiplication</button><button class="pill" onclick="choose('div',this)">÷ Division</button></div><div class="lesson"><div class="lessonTop"><div><span class="tag" id="opTag" style="background:#ffffff2b;color:white">OPERATION 01</span><h2 id="title">The fruit stall: Addition</h2><p id="subtitle">Combining two quantities to find a total</p></div><div id="emoji" style="font-size:58px">🍎</div></div><div class="lessonBody"><div class="scenario"><div class="story"><span class="tag">Real-life challenge</span><h3 id="storyTitle">The fruit stall gets a delivery</h3><p id="story">Aarav has 4 apples. Maya brings 3 more apples to the stall. How many apples are there altogether?</p><div class="equation" id="equation">4 + 3 = 7</div><div class="blocks" id="blocks"></div><p class="small" id="model">Model: join both groups. Count all the objects.</p></div><div><span class="tag">Learning objective</span><p id="objectiveShow">Understand the meaning behind each operation</p></div></div><div class="note"><b>Framework connection:</b> <span id="frameworkNote"></span></div></div></div><div class="toolbar"><button class="btn" onclick="nextOp()">Next operation →</button><button class="btn alt" onclick="copyScript()">Copy role-play script</button><button class="btn light" onclick="print()">Print this lesson</button></div></div></section>
 <section id="hpc" style="background:#f0f2fa"><div class="wrap"><div class="head"><div><div class="eyebrow">05 / Observe like a teacher</div><h2>HPC: a child is more than a score.</h2></div><p>Use this sample observation rubric during the role-play. It is a practical teaching aid, not an official prescribed HPC form.</p></div><div class="card"><h3>Sample observation rubric</h3><p class="muted">Learner: <span class="editable" contenteditable="true">Aarav</span> · Activity: <span class="editable" contenteditable="true">Mini maths market</span></p><div style="overflow-x:auto"><table class="rubric"><thead><tr><th>What we observe</th><th>Beginning</th><th>Developing</th><th>Secure</th><th>Evidence / teacher note</th></tr></thead><tbody><tr><td>Maths understanding</td><td>Needs support to identify operation.</td><td>Chooses operation with a prompt.</td><td>Chooses and explains the operation.</td><td contenteditable="true">Identified “joining” as addition.</td></tr><tr><td>Strategy & reasoning</td><td>Counts with substantial help.</td><td>Uses objects or drawings with some help.</td><td>Selects a strategy and explains why it works.</td><td contenteditable="true">Made two groups and counted on.</td></tr><tr><td>Communication</td><td>Shares answer with support.</td><td>Explains part of the thinking.</td><td>Explains steps using maths words.</td><td contenteditable="true">Used “altogether” and “equal groups”.</td></tr><tr><td>Collaboration</td><td>Needs help to take turns.</td><td>Participates with reminders.</td><td>Listens, shares materials and builds on ideas.</td><td contenteditable="true">Waited, listened and helped a peer.</td></tr><tr><td>Reflection / confidence</td><td>Needs prompts to reflect.</td><td>Names one thing learned.</td><td>Identifies what worked and what to try next.</td><td contenteditable="true">“Blocks helped me see the groups.”</td></tr></tbody></table></div><div class="note"><b>Teacher's next step:</b> <span class="editable" contenteditable="true">Offer a new problem with slightly larger numbers and ask the learner to draw their own model.</span></div></div><div class="grid two" style="margin-top:15px"><div class="card"><h3>What HPC helps us notice</h3><ul><li>Conceptual understanding, not just speed.</li><li>Strategies, reasoning and representation.</li><li>Language, confidence and participation.</li><li>Progress over time and support needed next.</li></ul></div><div class="card"><h3>What HPC is not</h3><ul><li>Not a label that defines a child.</li><li>Not only a marksheet with extra columns.</li><li>Not a one-time judgement.</li><li>Not a reason to compare children's worth.</li></ul></div></div></div></section>
 <section id="zoom"><div class="wrap"><div class="head"><div><div class="eyebrow">06 / Zoom run-of-show</div><h2>A 12-minute demonstration that feels alive.</h2></div><p>Let your audience experience the lesson, then reveal the policy connection behind each teaching move.</p></div><div class="grid two"><div class="card"><span class="tag">Suggested timing</span><div class="timeline" style="margin-top:20px"><div class="event"><b>0:00–1:00 · Hook</b><p>“If I give you 5 blocks and then 3 more, how will you help a child discover the answer?”</p></div><div class="event"><b>1:00–2:30 · Before / after</b><p>Contrast copying an algorithm with building, drawing, explaining and applying.</p></div><div class="event"><b>2:30–7:30 · Role-play</b><p>Assign teacher, shopkeeper and learner. Act out an operation with counters.</p></div><div class="event"><b>7:30–9:30 · Framework reveal</b><p>Point out NEP vision, NCF teaching design and HPC evidence.</p></div><div class="event"><b>9:30–11:00 · Assessment</b><p>Use the rubric to name what you observed and give one next step.</p></div><div class="event"><b>11:00–12:00 · Reflection</b><p>Ask: “What did the child understand that a worksheet alone might not reveal?”</p></div></div></div><div class="card"><span class="tag">Ready-to-say presenter script</span><h3>Opening statement</h3><p contenteditable="true">“Today I am not going to teach four mathematical symbols only. I am going to show how children can experience addition, subtraction, multiplication and division through a simple market role-play. NEP 2020 gives us the broader vision of meaningful and experiential learning. NCF helps us design the learning journey, and HPC helps us notice the child's progress in understanding, reasoning, communication and collaboration.”</p><h3>Closing statement</h3><p contenteditable="true">“The answer matters, but the child's thinking matters too. When a child builds the groups, explains the strategy and applies it in daily life, mathematics becomes meaningful. Our role is to create the experience, observe the learning and decide the next step.”</p><div class="note"><b>Zoom tip:</b> Hold real blocks, bottle caps, pencils or paper circles to the camera. Ask participants to answer in chat before revealing the number sentence.</div></div></div></div></section>
 <section style="background:#f0f2fa"><div class="wrap"><div class="head"><div><div class="eyebrow">07 / Your practical homework</div><h2>20-minute rehearsal at home.</h2></div><p>Act as teacher, learner and observer. The best way to understand the framework is to experience the learning process yourself.</p></div><div class="grid three"><div class="card"><div style="font-size:34px">🧺</div><h3>1. Collect simple props</h3><p>20 bottle caps, beans or blocks, 4 paper plates, a pencil and paper. No expensive kit required.</p></div><div class="card"><div style="font-size:34px">🎭</div><h3>2. Play three roles</h3><p>Be the teacher first, then the child, then the observer. Speak the dialogue aloud and move the objects.</p></div><div class="card"><div style="font-size:34px">📝</div><h3>3. Record evidence</h3><p>Write one thing the learner understood, one strategy used and one next step you would teach.</p></div></div><div class="card" style="margin-top:15px"><h3>Rehearsal checklist</h3><div class="grid two"><label><input type="checkbox"> I can explain the operation in everyday language.</label><label><input type="checkbox"> I can show it with real objects.</label><label><input type="checkbox"> I can connect the activity to NEP and NCF.</label><label><input type="checkbox"> I can identify two observable HPC indicators.</label><label><input type="checkbox"> I can ask open questions, not only “What is the answer?”</label><label><input type="checkbox"> I can suggest a next step for a learner who needs support.</label></div></div></div></section>
 <section><div class="wrap"><div class="head"><div><div class="eyebrow">08 / Quick knowledge check</div><h2>Can you explain the connection?</h2></div><p>Try these five questions before your Zoom presentation.</p></div><div class="card" id="quiz"><div class="quizq"><b>1. Which framework gives the broad national vision?</b><label><input type="radio" name="q1" value="a"> HPC</label><label><input type="radio" name="q1" value="b"> NEP 2020</label><label><input type="radio" name="q1" value="c"> A worksheet</label></div><div class="quizq"><b>2. Which framework guides curriculum and pedagogy?</b><label><input type="radio" name="q2" value="a"> NCF</label><label><input type="radio" name="q2" value="b"> HPC</label><label><input type="radio" name="q2" value="c"> Marks only</label></div><div class="quizq"><b>3. In concrete → pictorial → abstract, what comes first?</b><label><input type="radio" name="q3" value="a"> Equation only</label><label><input type="radio" name="q3" value="b"> Timed test</label><label><input type="radio" name="q3" value="c"> Objects children can move and count</label></div><div class="quizq"><b>4. What should HPC help a teacher understand?</b><label><input type="radio" name="q4" value="a"> Only who scored highest</label><label><input type="radio" name="q4" value="b"> Learner progress, strengths and support needs</label><label><input type="radio" name="q4" value="c"> Which child ranks last</label></div><div class="quizq"><b>5. A child solves 4 × 3 by making 3 equal groups of 4. What does this show?</b><label><input type="radio" name="q5" value="a"> Memorisation only</label><label><input type="radio" name="q5" value="b"> A meaningful model of multiplication</label><label><input type="radio" name="q5" value="c"> Division</label></div><div class="toolbar"><button class="btn" onclick="gradeQuiz()">Check my answers</button><button class="btn light" onclick="resetQuiz()">Try again</button><b id="result" class="muted"></b></div></div></div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="card"><h3>Official references & accuracy note</h3><p class="muted">The lesson, role-play scripts and rubric are original practice examples, not official government templates. They are informed by the following sources:</p><ul><li><a href="https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English.pdf" target="_blank">National Education Policy 2020</a> · holistic and experiential learning; 5+3+3+4 structure.</li><li><a href="https://www.ncert.nic.in/pdf/focus-group/NCF-FS_2022EN.pdf" target="_blank">National Curriculum Framework for Foundational Stage 2022</a> · play, activity-based pedagogy and early mathematics.</li><li><a href="https://ncert.nic.in/parakh/about.php" target="_blank">PARAKH, NCERT</a> · competency-based assessment and Holistic Progress Cards.</li><li><a href="https://ncert.nic.in/flipbook/NCF/National_Curriculum_Framework_for_Foundational_Stage_2022/files/basic-html/page118.html" target="_blank">NCF-FS: Teaching Mathematics</a> · problem-solving, reasoning, representation, communication and estimation.</li></ul><p class="small">NEP is the national policy; NCF is a curriculum framework; HPC means Holistic Progress Card. PARAKH is the assessment centre established within NCERT. Adapt the examples and assessment expectations to the learner's age, stage, curriculum and school context.</p></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="eyebrow" style="color:#b9b0ff">MATH IN MOTION / LEARNING LAB</div><h2 style="font-size:35px;letter-spacing:-.05em">Don't just teach the answer.<br>Make the thinking visible.</h2><p>Customizable Zoom lesson · Addition / Subtraction / Multiplication / Division · NEP 2020 × NCF × HPC</p><p class="small">Adapt numbers, language, props and difficulty to your learners.</p></div></footer>
+</main><footer class="footer"><div class="wrap"><div class="eyebrow" style="color:#b9b0ff">MATH IN MOTION / LEARNING LAB</div><h2 style="font-size:35px;letter-spacing:-.05em">Don't just teach the answer.<br>Make the thinking visible.</h2><p>Addition / Subtraction / Multiplication / Division · NEP 2020 × NCF × HPC</p><a class="small" href="index.html" target="blank">Home</a></div></footer>
 <script>
 const lessons={
 add:{tag:'OPERATION 01',title:'The fruit stall: Addition',sub:'Combining two quantities to find a total',emoji:'🍎',st:'The fruit stall gets a delivery',story:'Aarav has 4 apples. Maya brings 3 more apples to the stall. How many apples are there altogether?',eq:'4 + 3 = 7',groups:[4,3],model:'Join both groups. Count all the objects.',prompt:'“What do you notice when we bring the two groups together? How can we prove the total?”',evidence:'Child counts accurately, combines groups, explains that addition joins quantities and represents the total.',roles:[['🧑‍🏫','Teacher Maya','Facilitator: asks, prompts and observes.'],['🧑‍🌾','Aarav the seller','Starts with 4 apples and receives 3 more.'],['🧒','Mira the learner','Builds both groups, counts and explains.']],script:['Teacher: “Aarav, how many apples are on your mat?”','Aarav: “I have 4 apples.”','Teacher: “Mira brings 3 more. What could we do to find how many altogether?”','Mira moves 3 counters beside the 4, touches and counts all 7.','Mira: “There are 7. I joined the two groups: 4 + 3 = 7.”','Teacher: “Can you show it another way, perhaps with a drawing?”'],note:'NEP: real-life application and communication. NCF: concrete objects → drawing → number sentence. HPC: observe counting, explanation and collaboration.'},
@@ -68,122 +71,113 @@ sub:{tag:'OPERATION 02',title:'The lunchbox: Subtraction',sub:'Taking away or fi
 mul:{tag:'OPERATION 03',title:'The seed garden: Multiplication',sub:'Finding the total in equal groups',emoji:'🌱',st:'Planting seeds in equal rows',story:'A class makes 3 small pots. Each pot gets 4 seeds. How many seeds are needed altogether?',eq:'3 × 4 = 12',groups:[4,4,4],model:'Make 3 equal groups of 4. Count by groups or add 4 + 4 + 4.',prompt:'“What is the same in every pot? How many groups are there? How could repeated addition help?”',evidence:'Child makes equal groups, identifies number of groups and items per group, and connects multiplication to repeated addition.',roles:[['🧑‍🏫','Teacher Maya','Facilitator: helps children notice equal groups.'],['🪴','Garden captain','Sets out 3 pots and asks for 4 seeds in each.'],['🧒','Mira the learner','Makes equal groups and explains 3 groups of 4.']],script:['Garden captain: “I have 3 pots. Each pot needs 4 seeds.”','Teacher: “Let’s build the groups. Does every pot get the same number?”','Mira places 4 counters in each of 3 circles.','Teacher: “How many seeds in all? Can you count by fours?”','Mira: “4, 8, 12. Three groups of four make 12. 3 × 4 = 12.”','Teacher: “How is this connected to 4 + 4 + 4?”'],note:'NEP: connect maths with nature and practical problem-solving. NCF: build equal groups, draw arrays, connect to repeated addition and multiplication. HPC: observe grouping, pattern recognition and reasoning.'},
 div:{tag:'OPERATION 04',title:'The fair-share café: Division',sub:'Sharing a quantity equally',emoji:'🍪',st:'Cookies for the table',story:'There are 12 cookies to share equally among 3 children. How many cookies will each child receive?',eq:'12 ÷ 3 = 4',groups:[4,4,4],model:'Share 12 counters one by one into 3 groups. Each group gets 4.',prompt:'“How can we make sure the sharing is fair? What does ‘equally’ mean? How can we check?”',evidence:'Child distributes items fairly, recognises equal shares, counts each group and checks by combining or multiplying.',roles:[['🧑‍🏫','Teacher Maya','Facilitator: asks how to check that shares are equal.'],['🍪','Café helper','Brings 12 cookies and 3 plates.'],['🧒','Mira the learner','Shares one at a time and checks each plate.']],script:['Café helper: “We have 12 cookies and 3 children.”','Teacher: “What would fair sharing look like?”','Mira places one counter on each plate in turns until all 12 are shared.','Mira: “Each plate has 4. Everyone gets the same amount.”','Teacher: “How can we check?”','Mira: “4 + 4 + 4 = 12, so 12 ÷ 3 = 4.”'],note:'NEP: fairness, reasoning and everyday application. NCF: physically distribute, draw equal groups, then write the division sentence. HPC: observe fair sharing, equal grouping, checking and mathematical language.'}}
 
+
 let current='add';
 const $ = id => document.getElementById(id);
+Object.values(lessons).forEach(x=>{delete x.roles;delete x.script;});
 const originalLessons = JSON.parse(JSON.stringify(lessons));
 const defaultSettings = {
-  teacher:'Teacher Maya',
-  school:'Bright Minds Learning Club',
-  grade:'Grade 3–5',
-  setting:'Classroom fruit and snack market',
-  currency:'tokens',
-  objective:'Understand the meaning behind each operation'
+  teacher:'Teacher Maya', school:'Bright Minds Learning Club',
+  grade:'Grade 3–5', setting:'Classroom fruit and snack market',
+  currency:'tokens', objective:'Understand the meaning behind each operation'
 };
-let settings = {...defaultSettings};
+let settings={...defaultSettings};
 
+function safeText(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function getNumbers(){
   const a=Math.max(0,Math.floor(Number($('editA').value)||0));
-  const b=Math.max(1,Math.floor(Number($('editB').value)||1));
+  let b=Math.max(1,Math.floor(Number($('editB').value)||1));
+  if(current==='sub') b=Math.min(a,b);
   return {a,b};
 }
 function calculateLesson(d){
   const {a,b}=getNumbers();
-  let result=0, groups=[];
-  if(current==='add'){result=a+b;groups=[a,b];}
-  if(current==='sub'){result=a-b;groups=[a,b];}
-  if(current==='mul'){result=a*b;groups=Array.from({length:Math.min(a,30)},()=>b);}
-  if(current==='div'){
-    result=b===0?0:a/b;
-    const each=Math.floor(a/b);
-    groups=Array.from({length:Math.min(b,30)},()=>each);
-  }
-  d.eq = `${a} ${current==='add'?'+':current==='sub'?'−':current==='mul'?'×':'÷'} ${b} = ${Number.isInteger(result)?result:result.toFixed(2)}`;
-  d.groups=groups;
-  if(current==='add') d.model=`Join both groups. Count all ${a+b} objects.`;
-  if(current==='sub') d.model=`Start with ${a}, take away ${b}, then count what remains.`;
-  if(current==='mul') d.model=`Make ${a} equal groups of ${b}. Count by groups or use repeated addition.`;
-  if(current==='div') d.model=`Share ${a} objects equally among ${b} groups. Each group gets ${Number.isInteger(result)?result:'about '+result.toFixed(2)}.`;
-  $('numberHelp').textContent = current==='sub' && b>a
-    ? 'For a non-negative subtraction example, make the first number at least as large as the second.'
-    : current==='div' && a%b!==0
-      ? 'This division has a remainder. The visual counters show the whole-number share; use a divisible pair for equal sharing.'
-      : 'The equation and visual counters recalculate from these two numbers.';
-  return d;
+  let result=0;
+  if(current==='add') result=a+b;
+  if(current==='sub') result=a-b;
+  if(current==='mul') result=a*b;
+  if(current==='div') result=b===0?0:a/b;
+  const sign={add:'+',sub:'−',mul:'×',div:'÷'}[current];
+  d.eq=`${a} ${sign} ${b} = ${Number.isInteger(result)?result:result.toFixed(2)}`;
+  if(current==='add') d.model=`Count forward ${b} steps from ${a}.`;
+  else if(current==='sub') d.model=`Count back ${b} steps from ${a}.`;
+  else if(current==='mul') d.model=`Make ${b} groups of ${a}.`;
+  else d.model=`Share ${a} equally into ${b} groups.`;
+  d.groups=current==='mul'?Array.from({length:Math.min(b,20)},()=>a):
+            current==='div'?Array.from({length:Math.min(b,20)},()=>Math.floor(a/b)):[a,b];
+  return {a,b,result};
 }
-function safeText(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function saveAll(){
   try{
     localStorage.setItem('mathInMotionLiveLab',JSON.stringify({lessons,settings}));
-    $('saveStatus').textContent='✓ Saved in this browser. Your edits will be here when you return on this device.';
-  }catch(e){$('saveStatus').textContent='Live updates are working, but this browser could not save locally.';}
+    $('saveStatus').textContent='✓ Saved on this device';
+  }catch(e){$('saveStatus').textContent='Live changes work, but saving is unavailable in this browser.';}
 }
 function loadSaved(){
   try{
     const saved=JSON.parse(localStorage.getItem('mathInMotionLiveLab')||'null');
     if(saved){
       if(saved.settings) settings={...settings,...saved.settings};
-      if(saved.lessons) Object.keys(lessons).forEach(k=>{if(saved.lessons[k]) lessons[k]={...lessons[k],...saved.lessons[k]};});
+      if(saved.lessons) Object.keys(lessons).forEach(k=>{if(saved.lessons[k])lessons[k]={...lessons[k],...saved.lessons[k]};});
     }
   }catch(e){}
-  Object.keys(settings).forEach(k=>{if($(k)) $(k).value=settings[k];});
+  Object.keys(settings).forEach(k=>{if($(k))$(k).value=settings[k];});
 }
 function updateSettings(){
   ['teacher','school','grade','setting','currency','objective'].forEach(k=>{if($(k))settings[k]=$(k).value;});
-  $('objectiveShow').textContent=settings.objective;
-  $('customContext').textContent=`${settings.school || 'Your learning programme'}  •  ${settings.grade}  •  ${settings.setting}  •  Classroom currency / counters: ${settings.currency || 'counters'}`;
-  updateTeacher();
+  if($('objectiveShow'))$('objectiveShow').textContent=settings.objective;
+  $('customContext').textContent=`${settings.school||'Learning activity'} · ${settings.grade} · ${settings.setting}`;
   saveAll();
-}
-function updateTeacher(){
-  const name=$('teacher').value.trim()||'Teacher';
-  document.querySelectorAll('#script li').forEach(x=>{x.textContent=x.textContent.replaceAll('Teacher Maya',name).replace(/^Teacher:/,name+':');});
-}
-function renderRoleEditor(){
-  $('roleEditor').innerHTML=lessons[current].roles.map((r,i)=>`
-    <div class="repeat-row">
-      <input aria-label="Character icon" value="${safeText(r[0])}" data-role="${i}" data-part="0">
-      <input aria-label="Character name" value="${safeText(r[1])}" data-role="${i}" data-part="1">
-      <textarea aria-label="Character description" data-role="${i}" data-part="2">${safeText(r[2])}</textarea>
-      <button class="remove-row" type="button" onclick="removeRole(${i})">Delete</button>
-    </div>`).join('');
-}
-function renderDialogueEditor(){
-  $('dialogueEditor').innerHTML=lessons[current].script.map((line,i)=>`
-    <div class="repeat-row dialogue-row">
-      <textarea aria-label="Dialogue line ${i+1}" data-dialogue="${i}">${safeText(line)}</textarea>
-      <button class="remove-row" type="button" onclick="removeDialogue(${i})">Delete line</button>
-    </div>`).join('');
 }
 function fillEditor(){
   const d=lessons[current];
-  $('editStoryTitle').value=d.st;
+  $('editStoryTitle').value=d.st||d.title;
   $('editStory').value=d.story;
-  $('editEmoji').value=d.emoji;
-  $('editModel').value=d.model;
-  $('editPrompt').value=d.prompt;
-  $('editEvidence').value=d.evidence;
-  let a=4,b=3;
-  const m=d.eq.match(/^\s*(\d+)\s*[+−×÷]\s*(\d+)/);
-  if(m){a=Number(m[1]);b=Number(m[2]);}
-  $('editA').value=a;$('editB').value=b;
-  renderRoleEditor();renderDialogueEditor();
+  $('editEmoji').value=d.emoji||'📘';
+  $('editModel').value=d.model||'';
+  const m=(d.eq||'4 + 3 = 7').match(/^\s*(\d+)\s*[+−×÷]\s*(\d+)/);
+  $('editA').value=m?Number(m[1]):4;
+  $('editB').value=m?Number(m[2]):3;
 }
 function render(){
-  const d=lessons[current];
-  $('opTag').textContent=d.tag;$('title').textContent=d.title;$('subtitle').textContent=d.sub;
-  $('emoji').textContent=d.emoji;$('storyTitle').textContent=d.st;$('story').textContent=d.story;
-  $('equation').textContent=d.eq;$('model').textContent=d.model;$('prompt').textContent=d.prompt;
-  $('evidence').textContent=d.evidence;$('frameworkNote').textContent=d.note;
+  const d=lessons[current], nums=calculateLesson(d);
+  $('opTag').textContent=d.tag;
+  $('title').textContent=d.title;
+  $('subtitle').textContent=d.sub;
+  $('emoji').textContent=d.emoji;
+  $('storyTitle').textContent=d.st;
+  $('story').textContent=d.story;
+  $('equation').textContent=d.eq;
+  $('model').textContent=d.model;
   $('objectiveShow').textContent=settings.objective;
-  $('blocks').innerHTML='';
-  d.groups.forEach((n,i)=>{
-    for(let j=0;j<Math.min(n,60);j++){
-      const x=document.createElement('span');x.className='block '+(i===1?'alt':i===2?'third':'');x.textContent='●';$('blocks').appendChild(x);
+  if($('frameworkNote')) $('frameworkNote').textContent=d.note||'';
+
+  const blocks=$('blocks');
+  if(current==='add'||current==='sub'){
+    const sequence=[];
+    if(current==='add'){
+      for(let n=nums.a;n<=nums.result&&sequence.length<35;n++) sequence.push(n);
+    }else{
+      for(let n=nums.a;n>=nums.result&&sequence.length<35;n--) sequence.push(n);
     }
-    if(i<d.groups.length-1){const gap=document.createElement('span');gap.style.width='9px';$('blocks').appendChild(gap);}
-  });
-  $('roles').innerHTML=d.roles.map(r=>`<div class="role"><i>${safeText(r[0])}</i><b>${safeText(r[1])}</b><small>${safeText(r[2])}</small></div>`).join('');
-  $('script').innerHTML=d.script.map(x=>`<li>${safeText(x)}</li>`).join('');
+    blocks.className='count-steps';
+    blocks.innerHTML=sequence.map((n,i)=>{
+      const cls=i===0?'start':i===sequence.length-1?'finish':'';
+      const arrow=i===0?'':`<span class="count-arrow">→</span>`;
+      return `${arrow}<span class="count-step ${cls}">${n}</span>`;
+    }).join('');
+  }else{
+    blocks.className='blocks';
+    blocks.innerHTML='';
+    d.groups.forEach((n,i)=>{
+      for(let j=0;j<Math.min(n,40);j++){
+        const x=document.createElement('span');
+        x.className='block '+(i===1?'alt':i===2?'third':'');
+        x.textContent='●';blocks.appendChild(x);
+      }
+      if(i<d.groups.length-1){const gap=document.createElement('span');gap.style.width='9px';blocks.appendChild(gap);}
+    });
+  }
   updateSettings();
 }
 function choose(k,b){
@@ -192,29 +186,18 @@ function choose(k,b){
   if(b)b.classList.add('active');
   fillEditor();render();
 }
-function nextOp(){
-  const a=['add','sub','mul','div'],i=(a.indexOf(current)+1)%4;
-  choose(a[i],document.querySelectorAll('#opTabs .pill')[i]);
-}
 function updateLessonFields(){
   const d=lessons[current];
   d.st=$('editStoryTitle').value;
   d.story=$('editStory').value;
   d.emoji=$('editEmoji').value||'📘';
   d.model=$('editModel').value;
-  d.prompt=$('editPrompt').value;
-  d.evidence=$('editEvidence').value;
   calculateLesson(d);
-  render();
-  saveAll();
+  render();saveAll();
 }
-function addRole(){lessons[current].roles.push(['🎭','New character','Add this character’s role and action.']);renderRoleEditor();render();saveAll();}
-function removeRole(i){lessons[current].roles.splice(i,1);renderRoleEditor();render();saveAll();}
-function addDialogue(){lessons[current].script.push('New character: Add your dialogue here.');renderDialogueEditor();render();saveAll();}
-function removeDialogue(i){lessons[current].script.splice(i,1);renderDialogueEditor();render();saveAll();}
 function resetCurrentLesson(){
   lessons[current]=JSON.parse(JSON.stringify(originalLessons[current]));
-  fillEditor();calculateLesson(lessons[current]);render();saveAll();
+  fillEditor();render();saveAll();
 }
 function resetSettings(){
   settings={...defaultSettings};
@@ -226,40 +209,24 @@ function stage(k,b){
   document.querySelectorAll('.stage .pill').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');
   const t={
-    found:'<b>Foundational:</b> Count real objects, make small groups, compare “more / less”, and share toys equally. Keep it playful, oral, concrete and short. Do not rush formal algorithms.',
-    prep:'<b>Preparatory:</b> Use counters, arrays, drawings and number sentences. Ask children to explain strategies, compare methods and apply operations in familiar contexts.',
-    middle:'<b>Middle:</b> Extend to larger numbers, multi-step problems, estimation, inverse operations, patterns and justification. Ask learners to model, test and defend a strategy.'
+    found:'<b>Foundational:</b> Use objects and small numbers.',
+    prep:'<b>Preparatory:</b> Use counters, drawings and number sentences.',
+    middle:'<b>Middle:</b> Use larger numbers and explain your method.'
   };
   $('stageText').innerHTML=t[k];
 }
-function gradeChange(){
-  const g=$('grade').value;
-  const text=g==='Grade 1–2'?'Use smaller numbers, concrete objects, oral prompts and play.':g==='Grade 3–5'?'Invite drawings, number sentences, multiple strategies and peer explanations.':'Use larger numbers, arrays, inverse operations, estimation and written justification.';
-  $('stageText').innerHTML='<b>'+safeText(g)+':</b> '+text;
-  updateSettings();
-}
+function gradeChange(){updateSettings();}
 function renderObjective(){updateSettings();}
-function copyScript(){
-  const d=lessons[current],txt=d.title+'\n'+d.story+'\n'+d.eq+'\n\n'+d.script.join('\n')+'\n\n'+d.note;
-  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>alert('Role-play script copied.')).catch(()=>alert(txt));}
-  else alert(txt);
-}
 function gradeQuiz(){
   const a={q1:'b',q2:'a',q3:'c',q4:'b',q5:'b'};let score=0;
   Object.keys(a).forEach(k=>{const x=document.querySelector('input[name='+k+']:checked');if(x&&x.value===a[k])score++;});
-  $('result').textContent='Your score: '+score+'/5. '+(score===5?'Excellent! You can explain the framework connection.':score>=3?'Good progress. Review the framework cards and try again.':'Review the three lenses, then try again.');
+  $('result').textContent='Score: '+score+'/5';
 }
 function resetQuiz(){document.querySelectorAll('#quiz input').forEach(x=>x.checked=false);$('result').textContent='';}
 
 document.addEventListener('input',e=>{
-  if(['editStoryTitle','editStory','editEmoji','editModel','editPrompt','editEvidence','editA','editB'].includes(e.target.id)){updateLessonFields();return;}
-  if(e.target.matches('[data-role]')){
-    const i=Number(e.target.dataset.role),p=Number(e.target.dataset.part);
-    lessons[current].roles[i][p]=e.target.value;render();saveAll();return;
-  }
-  if(e.target.matches('[data-dialogue]')){
-    lessons[current].script[Number(e.target.dataset.dialogue)]=e.target.value;
-    $('script').innerHTML=lessons[current].script.map(x=>`<li>${safeText(x)}</li>`).join('');saveAll();return;
+  if(['editStoryTitle','editStory','editEmoji','editModel','editA','editB'].includes(e.target.id)){
+    updateLessonFields();return;
   }
   if(['teacher','school','setting','currency','objective'].includes(e.target.id))updateSettings();
 });
@@ -269,7 +236,6 @@ document.addEventListener('change',e=>{
 });
 loadSaved();
 fillEditor();
-calculateLesson(lessons[current]);
 render();
 
 </script></body></html>
