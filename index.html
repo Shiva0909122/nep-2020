@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#101c35" />
+<meta name="description" content="A visual, evidence-led learning guide to NEP 2020, NCF, Holistic Progress Card, India's education reforms from 2020 to 2026, and the future of AI in education." />
+<title>The Learning Shift | NEP 2020, NCF, HPC & AI</title>
+<style>
+:root{
+  --ink:#16233d;--muted:#66748b;--paper:#f5f7fb;--white:#fff;--line:#e4e9f1;
+  --navy:#101c35;--navy2:#192b4d;--teal:#0f9f91;--teal2:#dff6f1;--gold:#e9b44c;
+  --coral:#ef7867;--purple:#7963d8;--blue:#548ce8;--shadow:0 18px 50px rgba(20,37,68,.09);--radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:92px} body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65} a{color:#087f78;text-decoration:none} a:hover{text-decoration:underline} img{max-width:100%;display:block} button{font:inherit;cursor:pointer} .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+#progress{position:fixed;z-index:1000;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--teal),var(--gold),var(--coral))}
+header{position:sticky;top:0;z-index:90;background:rgba(16,28,53,.96);backdrop-filter:blur(14px);color:white;border-bottom:1px solid rgba(255,255,255,.09)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:-.04em;color:white;font-size:1.02rem;display:flex;align-items:center;gap:11px}.brand-mark{width:35px;height:35px;border-radius:12px;background:linear-gradient(145deg,#36c6b3,#7c9af5);display:grid;place-items:center;color:#10213a;font-weight:950}.nav-links{display:flex;gap:19px;align-items:center;font-size:.83rem;color:#d5dfef}.nav-links a{color:inherit}.nav-links a:hover{color:#fff}.nav-cta{background:#fff;color:var(--navy)!important;padding:9px 14px;border-radius:99px;font-weight:750}.menu-btn{display:none;background:transparent;color:#fff;border:1px solid #52617a;border-radius:10px;padding:7px 11px}
+.hero{background:radial-gradient(circle at 82% 16%,rgba(68,191,176,.22),transparent 24%),radial-gradient(circle at 12% 85%,rgba(112,100,220,.26),transparent 28%),linear-gradient(135deg,#101c35 0%,#1a2d50 60%,#183f51 100%);color:#fff;overflow:hidden;position:relative;padding:74px 0 58px}.hero-grid{display:grid;grid-template-columns:1.13fr .87fr;gap:48px;align-items:center}.eyebrow{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.73rem;color:#73dfce;display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";width:25px;height:2px;background:currentColor}.hero h1{font-size:clamp(2.55rem,6vw,5.1rem);line-height:1.02;letter-spacing:-.065em;margin:17px 0 22px;max-width:800px}.hero h1 span{color:#7be0d0}.hero-copy{font-size:1.1rem;color:#d6e0ef;max-width:660px}.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin:27px 0}.pill{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e9f0fa;border-radius:99px;padding:8px 12px;font-size:.78rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:800;display:inline-flex;align-items:center;gap:8px}.btn-primary{background:#75decf;color:#10213a}.btn-ghost{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);color:#fff}.hero-art{position:relative;min-height:390px;display:grid;place-items:center}.orbit{position:absolute;border:1px solid rgba(255,255,255,.15);border-radius:50%;width:350px;height:350px}.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed rgba(255,255,255,.18);border-radius:50%;inset:27px}.orbit:after{inset:65px}.art-card{position:relative;z-index:2;width:min(370px,100%);padding:23px;border-radius:28px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(16px);box-shadow:0 24px 60px rgba(0,0,0,.25);transform:rotate(-2deg)}.art-top{display:flex;align-items:center;justify-content:space-between;color:#d9e5f5;font-size:.78rem}.art-icon{width:62px;height:62px;border-radius:19px;background:linear-gradient(135deg,#74ddcb,#f0c36a);display:grid;place-items:center;color:#16233d;font-size:1.9rem;margin:19px 0}.art-card h3{margin:0;font-size:1.45rem;line-height:1.2}.art-card p{color:#cfdae9;font-size:.9rem}.art-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.art-chips span{font-size:.72rem;padding:6px 9px;border-radius:99px;background:rgba(255,255,255,.12)}.float{position:absolute;background:#fff;color:var(--ink);padding:11px 14px;border-radius:14px;font-weight:800;box-shadow:var(--shadow);font-size:.8rem}.float.one{top:30px;right:0}.float.two{bottom:24px;left:-5px}.float.three{right:-9px;bottom:84px;color:#087f78}
+main{padding:36px 0 80px}.section{padding:54px 0;border-bottom:1px solid var(--line)}.section:last-child{border-bottom:0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.kicker{font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:850}.section h2{font-size:clamp(1.85rem,3.8vw,2.8rem);line-height:1.13;letter-spacing:-.045em;margin:8px 0 10px}.section-intro{max-width:760px;color:var(--muted);margin:0}.small-note{font-size:.81rem;color:var(--muted)}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.callout{padding:20px 22px;border-radius:16px;background:#eaf7f5;border-left:4px solid var(--teal);color:#254d4b}.callout strong{color:#0d6f68}.callout.warn{background:#fff5e4;border-color:var(--gold);color:#6d5224}.callout.coral{background:#fff0ed;border-color:var(--coral);color:#744139}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:22px;box-shadow:0 8px 28px rgba(20,37,68,.045)}.card h3{font-size:1.08rem;margin:8px 0}.card p{color:var(--muted);margin:0}.num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--teal2);color:#087f78;font-weight:900}.emoji{font-size:1.55rem}.tag{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:var(--teal)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pillar{padding:24px;border-radius:21px;position:relative;overflow:hidden;min-height:225px;color:white}.pillar:nth-child(1){background:linear-gradient(140deg,#17294b,#315d86)}.pillar:nth-child(2){background:linear-gradient(140deg,#087f78,#36b6a2)}.pillar:nth-child(3){background:linear-gradient(140deg,#5b4ab0,#9182e9)}.pillar .big{font-size:2.3rem;font-weight:950;opacity:.22;position:absolute;right:20px;top:7px}.pillar h3{font-size:1.55rem;margin:12px 0 5px}.pillar p{color:rgba(255,255,255,.85);font-size:.91rem}.pillar .mini{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#dff7f2}.formula{text-align:center;font-size:1.05rem;font-weight:800;margin:20px 0 0;color:#34445d}.formula span{color:var(--teal)}
+.stage-track{display:grid;grid-template-columns:5fr 3fr 3fr 4fr;gap:7px;margin:23px 0}.stage{padding:19px 15px;border-radius:15px;color:#fff;min-height:154px}.stage:nth-child(1){background:#137f78}.stage:nth-child(2){background:#4d8bc9}.stage:nth-child(3){background:#7865ce}.stage:nth-child(4){background:#df8757}.stage .ratio{font-size:2rem;font-weight:950;line-height:1}.stage h4{margin:10px 0 3px}.stage p{font-size:.78rem;margin:0;color:rgba(255,255,255,.88)}.stage-age{font-size:.72rem;color:var(--muted);margin-top:8px}
+.comparison-tools{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter-btn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:9px 14px;color:var(--muted);font-weight:750;font-size:.82rem}.filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.compare-table{overflow:hidden}.compare-table table{width:100%;border-collapse:collapse}.compare-table th,.compare-table td{text-align:left;padding:16px;border-bottom:1px solid var(--line);vertical-align:top}.compare-table th{font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;background:#f7f9fc;color:#52627a}.compare-table td{font-size:.9rem}.compare-table tr:last-child td{border-bottom:0}.compare-table td:first-child{font-weight:850;width:17%;color:var(--ink)}.before{color:#79524a}.after{color:#176e65}.caveat{padding:17px 20px;margin-top:14px;background:#fff7e8;border:1px solid #f2dfb6;border-radius:15px;color:#745725;font-size:.88rem}
+.timeline{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.year-card{padding:22px 22px 20px 25px;position:relative;overflow:hidden}.year-card:before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:var(--teal)}.year-label{font-size:1.7rem;font-weight:950;letter-spacing:-.05em;color:#213554}.year-card h3{margin:4px 0 12px}.event{border-top:1px solid var(--line);padding:11px 0}.event:first-of-type{border-top:0}.event b{display:block;font-size:.9rem}.event p{font-size:.83rem;color:var(--muted);margin:4px 0}.event .date{display:inline-block;font-size:.68rem;color:#087f78;background:#e8f7f4;border-radius:6px;padding:3px 7px;font-weight:850;margin-bottom:5px}.event .note{color:#835f20}.timeline-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{padding:21px}.stat .value{font-size:2.15rem;font-weight:950;letter-spacing:-.06em;line-height:1.1;color:#162b4b}.stat .label{font-size:.84rem;font-weight:800;margin:8px 0 4px}.stat p{font-size:.76rem;color:var(--muted);margin:0}.stat .trend{font-size:.73rem;color:#0b867b;font-weight:850}.bar-wrap{display:flex;gap:12px;align-items:end;height:140px;margin:20px 0 12px;padding:0 8px;border-bottom:1px solid var(--line)}.bar-col{flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;height:100%;gap:7px}.bar{width:min(55px,65%);border-radius:9px 9px 2px 2px;background:linear-gradient(180deg,#4fc5b4,#138b80);position:relative;min-height:4px}.bar.alt{background:linear-gradient(180deg,#a69af2,#6c5cca)}.bar-col span{font-size:.72rem;color:var(--muted);text-align:center}.bar-col b{font-size:.78rem}.data-box{padding:22px}.data-box h3{margin:0 0 4px}.data-box p{font-size:.83rem;color:var(--muted)}.data-source{font-size:.72rem;color:#7c8798}.image-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.photo{overflow:hidden;border-radius:20px;position:relative;background:#dfe8ee;min-height:250px}.photo img{width:100%;height:100%;min-height:250px;object-fit:cover}.photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:30px 16px 13px;color:#fff;background:linear-gradient(transparent,rgba(10,23,43,.78));font-size:.76rem}.photo a{color:#d2fff7;text-decoration:underline}.photo-stack{display:grid;grid-template-rows:1fr 1fr;gap:18px}.photo-stack .photo,.photo-stack .photo img{min-height:150px}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.framework-card{padding:23px}.framework-card .code{display:inline-block;padding:5px 9px;border-radius:8px;font-size:.72rem;font-weight:900;background:#edf3fb;color:#345477}.framework-card h3{font-size:1.28rem;margin:11px 0 7px}.framework-card p{color:var(--muted);font-size:.89rem}.framework-card ul{padding-left:18px;color:#41516a;font-size:.84rem}.framework-card li{margin:7px 0}.hpc-domains{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:17px}.domain{padding:15px;border:1px solid var(--line);border-radius:15px;background:#fff}.domain b{display:block}.domain span{font-size:.79rem;color:var(--muted)}
+.lesson{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.lesson-aside{background:var(--navy);color:#fff;padding:26px;border-radius:20px}.lesson-aside p{color:#d5dfef}.lesson-aside .topic{font-size:1.8rem;font-weight:950;letter-spacing:-.04em;line-height:1.1;margin:10px 0 20px}.lesson-steps{padding:24px}.lesson-step{display:grid;grid-template-columns:40px 1fr;gap:13px;padding:13px 0;border-bottom:1px solid var(--line)}.lesson-step:last-child{border-bottom:0}.lesson-step .num{width:34px;height:34px}.lesson-step h4{margin:0 0 3px}.lesson-step p{margin:0;color:var(--muted);font-size:.84rem}.rubric{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:10px}.rubric th,.rubric td{border-bottom:1px solid var(--line);padding:10px;text-align:left}.rubric th{background:#f6f8fb}.future-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.future-card{padding:23px}.future-card h3{display:flex;align-items:center;gap:10px}.future-card ul{padding-left:20px;color:#43536b;font-size:.88rem}.future-card li{margin:8px 0}.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.risk{padding:17px;border-radius:15px;background:#fff;border:1px solid var(--line)}.risk b{display:block;margin-bottom:5px}.risk p{font-size:.8rem;color:var(--muted);margin:0}.myth-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.myth{padding:16px 18px}.myth summary{font-weight:850;cursor:pointer}.myth p{margin:9px 0 0;color:var(--muted);font-size:.87rem}.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check{background:white;border:1px solid var(--line);padding:13px;border-radius:13px;display:flex;gap:10px;align-items:flex-start;font-size:.87rem}.check input{accent-color:var(--teal);margin-top:5px;transform:scale(1.1)}.quiz{padding:24px}.question{padding:16px 0;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0}.question h4{margin:0 0 9px}.options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.option{border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:.83rem;background:#fff;text-align:left;color:#40516a}.option:hover{border-color:var(--teal)}.option.selected{background:#e8f7f4;border-color:var(--teal);color:#096e67;font-weight:800}.quiz-result{margin-top:17px;padding:15px;border-radius:12px;background:#eef3fa;display:none;font-weight:800}.source-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.source{padding:13px 15px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:.84rem}.source small{display:block;color:var(--muted);margin-top:3px}.source a{font-weight:800}.foot{background:#101c35;color:#d5e1f0;padding:36px 0}.foot-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot p{max-width:700px;font-size:.83rem;color:#aebbd0}.backtop{position:fixed;right:20px;bottom:20px;border:0;border-radius:50%;width:46px;height:46px;background:var(--navy);color:#fff;box-shadow:var(--shadow);display:none}.backtop.show{display:block}.muted{color:var(--muted)}.emphasis{font-weight:850;color:#0c746c}.divider{height:1px;background:var(--line);margin:20px 0}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:920px){.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy);padding:18px 20px 22px;flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.menu-btn{display:block}.hero-grid{grid-template-columns:1fr;gap:16px}.hero-art{min-height:320px}.hero{padding-top:55px}.stats{grid-template-columns:repeat(2,1fr)}.grid3,.pillars,.framework-grid{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head .small-note{margin-top:8px}.image-grid{grid-template-columns:1fr}.photo-stack{grid-template-columns:1fr 1fr;grid-template-rows:1fr}.lesson{grid-template-columns:1fr}.hpc-domains{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.wrap{width:min(100% - 26px,1180px)}.hero h1{font-size:2.65rem}.hero-art{min-height:300px}.orbit{width:275px;height:275px}.art-card{width:290px}.float.one{right:-2px;top:10px}.float.two{left:0;bottom:4px}.float.three{right:0;bottom:60px}.section{padding:39px 0}.grid3,.grid2,.pillars,.framework-grid,.timeline,.future-grid,.myth-list,.checklist,.source-list{grid-template-columns:1fr}.stage-track{grid-template-columns:1fr 1fr}.stage{min-height:135px}.stats{grid-template-columns:1fr 1fr}.stat .value{font-size:1.75rem}.compare-table{overflow-x:auto}.compare-table table{min-width:760px}.hpc-domains{grid-template-columns:1fr 1fr}.photo-stack{grid-template-columns:1fr;grid-template-rows:auto}.photo-stack .photo,.photo-stack .photo img{min-height:210px}.options{grid-template-columns:1fr}.foot-inner{display:block}}
+@media print{header,#progress,.hero-actions,.menu-btn,.backtop,.comparison-tools,.timeline-filter,.quiz .btn{display:none!important}body{background:white}.hero{background:#fff;color:#16233d;padding:25px 0}.hero-copy,.pill,.art-top,.art-card p{color:#41516a}.hero-art{display:none}.section{break-inside:avoid;padding:28px 0}.panel,.card{box-shadow:none}.wrap{width:100%}a{color:inherit;text-decoration:underline}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="The Learning Shift home"><span class="brand-mark">LS</span><span>THE LEARNING SHIFT</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#big-picture">Big picture</a><a href="#before-after">Before / after</a><a href="#timeline">2020–26 timeline</a><a href="#classroom">Classroom examples</a><a href="#ai-future">AI & future</a><a class="nav-cta" href="#quick-test">Test yourself</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+  </div>
+</header>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">A visual learning guide · India · 2020–2026</div>
+      <h1>From teaching a <span>chapter</span> to building a capable human.</h1>
+      <p class="hero-copy">Understand NEP 2020, the National Curriculum Framework, the Holistic Progress Card, what has actually changed in six years, and what AI could mean for the next generation of learners.</p>
+      <div class="hero-meta"><span class="pill">📚 Study guide</span><span class="pill">🧭 6-year timeline</span><span class="pill">🧪 Classroom examples</span><span class="pill">🤖 AI & future skills</span><span class="pill">Updated: 20 Nov 2026</span></div>
+      <div class="hero-actions"><a class="btn btn-primary" href="#big-picture">Start learning ↓</a><button class="btn btn-ghost" onclick="window.print()">Print / save as PDF ↗</button></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration representing a learner, teacher and AI-supported learning">
+      <div class="orbit"></div>
+      <div class="art-card">
+        <div class="art-top"><span>THE NEW LEARNING LOOP</span><span>✦ 2026</span></div>
+        <div class="art-icon">◉</div>
+        <h3>Curiosity → Practice → Feedback → Growth</h3>
+        <p>Technology can accelerate learning. Human judgement, relationships and purpose keep it meaningful.</p>
+        <div class="art-chips"><span>Concepts</span><span>Competencies</span><span>Character</span><span>Creativity</span></div>
+      </div>
+      <div class="float one">🧠 Think deeply</div><div class="float two">🌱 Grow holistically</div><div class="float three">AI is a tool, not the teacher</div>
+    </div>
+  </div>
+</section>
+<main class="wrap">
+  <section class="section" id="big-picture">
+    <div class="section-head"><div><div class="kicker">01 · Start with the map</div><h2>Three ideas. One connected education system.</h2><p class="section-intro">The easiest way to remember the relationship is to see each framework as answering a different question.</p></div><div class="small-note">Memory shortcut: <b>Vision → Design → Evidence</b></div></div>
+    <div class="pillars">
+      <article class="pillar"><span class="big">01</span><div class="mini">The vision</div><h3>NEP 2020</h3><p>What kind of education should India build? It sets the direction: equitable, flexible, holistic, multidisciplinary and competency-focused learning.</p></article>
+      <article class="pillar"><span class="big">02</span><div class="mini">The learning design</div><h3>NCF</h3><p>How should that vision enter the classroom? It guides curriculum, pedagogy, learning experiences and assessment by developmental stage.</p></article>
+      <article class="pillar"><span class="big">03</span><div class="mini">The progress picture</div><h3>HPC</h3><p>How do we understand a learner's growth? It brings together evidence of academic, social, emotional, physical, ethical and creative development.</p></article>
+    </div>
+    <p class="formula">NEP sets the <span>direction</span> · NCF shapes the <span>journey</span> · HPC helps us <span>notice progress</span>.</p>
+    <div class="callout" style="margin-top:22px"><strong>Keep this distinction clear:</strong> NEP is a national policy, NCF is a curriculum framework, and HPC is an assessment and reporting approach. They are connected, but they are not interchangeable documents.</div>
+  </section>
+
+  <section class="section" id="before-after">
+    <div class="section-head"><div><div class="kicker">02 · The big comparison</div><h2>Before NEP 2020 and the direction after it</h2><p class="section-intro">The table compares the dominant patterns that the reform seeks to change with the direction the policy encourages. It is not a claim that every pre-2020 school taught in the same way, or that every school has changed completely since 2020.</p></div></div>
+    <div class="comparison-tools" role="group" aria-label="Filter comparison categories"><button class="filter-btn active" data-filter="all">All themes</button><button class="filter-btn" data-filter="learning">Learning & teaching</button><button class="filter-btn" data-filter="assessment">Assessment</button><button class="filter-btn" data-filter="school">School structure</button><button class="filter-btn" data-filter="future">Future readiness</button></div>
+    <div class="panel compare-table">
+      <table>
+        <thead><tr><th>Theme</th><th>Earlier dominant pattern / challenge</th><th>Direction encouraged by NEP 2020 + NCF</th></tr></thead>
+        <tbody>
+          <tr data-category="school"><td>School stages</td><td class="before">10+2 was the familiar curricular structure, with pre-primary often treated separately from the school continuum.</td><td class="after">A 5+3+3+4 curricular and pedagogical design covers ages 3–18, bringing early childhood education into the framework.</td></tr>
+          <tr data-category="learning"><td>Classroom learning</td><td class="before">In many settings, pressure to finish the syllabus and prepare for exams encouraged teacher-talk, textbook coverage and memorisation.</td><td class="after">More play, discovery, discussion, experimentation, projects, reflection and application of concepts.</td></tr>
+          <tr data-category="learning"><td>Early childhood</td><td class="before">Pre-primary provision varied widely; the transition into Grade 1 could be abrupt.</td><td class="after">ECCE and school readiness are treated as the foundation, with play-based learning for ages 3–8.</td></tr>
+          <tr data-category="learning"><td>Subjects & skills</td><td class="before">Academic, vocational, arts and extracurricular pathways could feel separated or unequal in status.</td><td class="after">Less rigid separation; arts, sports, vocational exposure and interdisciplinary learning should sit within a broader education.</td></tr>
+          <tr data-category="assessment"><td>Assessment</td><td class="before">High-stakes written tests and marks often dominated how achievement was communicated.</td><td class="after">More formative and competency-based assessment, with feedback on what a child understands and can apply.</td></tr>
+          <tr data-category="assessment"><td>Progress reports</td><td class="before">A report card often summarised subject marks, grades, attendance and teacher remarks.</td><td class="after">HPC aims for a wider view of growth, learning transitions, strengths and needs across multiple domains.</td></tr>
+          <tr data-category="future"><td>Technology</td><td class="before">Digital learning existed, but access and classroom integration were uneven; the pandemic exposed the access gap.</td><td class="after">Digital infrastructure, blended learning, digital literacy and responsible use of emerging technologies receive greater attention.</td></tr>
+          <tr data-category="future"><td>Work & life skills</td><td class="before">Vocational learning, internships and practical problem-solving were not consistently integrated across school experience.</td><td class="after">Early vocational exposure, internships from the middle stage, critical thinking, communication and problem-solving are encouraged.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="caveat"><b>Important nuance:</b> 5+3+3+4 is a curricular and pedagogical structure, not a magic administrative switch that instantly changed every school building, board examination or class label. Schools, boards and States implement reforms at different speeds. The old patterns also did not disappear on the day NEP was approved.</div>
+  </section>
+
+  <section class="section" id="structure">
+    <div class="section-head"><div><div class="kicker">03 · Understand the structure</div><h2>The 5+3+3+4 model, made visual</h2><p class="section-intro">The stages are designed around how children develop. The first five years include three years of preschool / Anganwadi / Balvatika and Grades 1–2.</p></div></div>
+    <div class="stage-track">
+      <div class="stage"><div class="ratio">5</div><h4>Foundational</h4><p>3 years preschool + Grades 1–2</p><div class="stage-age">Ages 3–8 · Play and activity</div></div>
+      <div class="stage"><div class="ratio">3</div><h4>Preparatory</h4><p>Grades 3–5</p><div class="stage-age">Ages 8–11 · Discovery</div></div>
+      <div class="stage"><div class="ratio">3</div><h4>Middle</h4><p>Grades 6–8</p><div class="stage-age">Ages 11–14 · Subjects and projects</div></div>
+      <div class="stage"><div class="ratio">4</div><h4>Secondary</h4><p>Grades 9–12</p><div class="stage-age">Ages 14–18 · Depth and choice</div></div>
+    </div>
+    <div class="grid2">
+      <article class="card"><div class="emoji">🧸</div><h3>Foundational · Learn through play</h3><p>Build language, early numeracy, motor skills, curiosity and social confidence through stories, songs, blocks, conversation and movement.</p></article>
+      <article class="card"><div class="emoji">🔎</div><h3>Preparatory · Discover patterns</h3><p>Build strong reading, writing and numeracy. Introduce science, mathematics and the world through hands-on tasks, observation and guided exploration.</p></article>
+      <article class="card"><div class="emoji">🧪</div><h3>Middle · Connect subjects to life</h3><p>Introduce more abstract ideas and subject depth while retaining projects, experiments, coding, vocational exposure and practical problem-solving.</p></article>
+      <article class="card"><div class="emoji">🧭</div><h3>Secondary · Go deeper and choose</h3><p>Develop analysis, independence, subject depth and flexibility. Connect learning to interests, life aspirations, careers and multidisciplinary pathways.</p></article>
+    </div>
+    <p class="small-note" style="margin-top:12px">Policy reference: NEP 2020, Chapter 4, especially paragraphs 4.1–4.2. The age bands are approximate stage guidance.</p>
+  </section>
+
+  <section class="section" id="timeline">
+    <div class="section-head"><div><div class="kicker">04 · Six years in the real world</div><h2>What happened from 2020 to 2026?</h2><p class="section-intro">Follow the path from policy approval to curriculum design, school programmes, assessment systems and the arrival of structured AI learning.</p></div><div class="small-note">Timeline through 20 November 2026</div></div>
+    <div class="timeline-filter"><button class="filter-btn active" data-year="all">All years</button><button class="filter-btn" data-year="2020">2020</button><button class="filter-btn" data-year="2021">2021</button><button class="filter-btn" data-year="2022">2022</button><button class="filter-btn" data-year="2023">2023</button><button class="filter-btn" data-year="2024">2024</button><button class="filter-btn" data-year="2025">2025</button><button class="filter-btn" data-year="2026">2026</button></div>
+    <div class="timeline" id="timelineGrid">
+      <article class="panel year-card" data-year-card="2020"><div class="year-label">2020</div><h3>The policy moment</h3>
+        <div class="event"><span class="date">17 MAY 2020</span><b>PM e-VIDYA launched during the COVID-19 disruption</b><p>Multi-mode learning through digital platforms, TV, radio and other channels helped keep learning available when schools were closed. <span class="note">Timeline nuance: this initiative began before NEP was approved, so it should not be described as caused by NEP.</span></p></div>
+        <div class="event"><span class="date">29 JUL 2020</span><b>NEP 2020 approved by the Union Cabinet</b><p>Introduced the 5+3+3+4 vision, stronger focus on foundational learning, holistic education, flexibility, vocational exposure and assessment reform.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2021"><div class="year-label">2021</div><h3>Foundations become a mission</h3>
+        <div class="event"><span class="date">8 APR 2021</span><b>SARTHAQ implementation plan released</b><p>A roadmap to support implementation of NEP recommendations for students and teachers.</p></div>
+        <div class="event"><span class="date">5 JUL 2021</span><b>NIPUN Bharat launched</b><p>A national mission to strengthen foundational literacy and numeracy, with the stated goal that children achieve foundational skills by Grade 3 by 2026–27.</p></div>
+        <div class="event"><span class="date">29 JUL 2021</span><b>Vidya Pravesh introduced</b><p>A three-month, play-based school preparation module for children entering Grade 1.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2022"><div class="year-label">2022</div><h3>New learning frameworks take shape</h3>
+        <div class="event"><span class="date">7 SEP 2022</span><b>PM SHRI scheme launched</b><p>Selected existing schools are to be strengthened as exemplar schools aligned with NEP, including pedagogy, inclusion, infrastructure and sustainability.</p></div>
+        <div class="event"><span class="date">20 OCT 2022</span><b>NCF for Foundational Stage (NCF-FS) released</b><p>Guidance for curriculum and pedagogy for ages 3–8, with play-based and developmentally appropriate learning at the centre.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2023"><div class="year-label">2023</div><h3>Frameworks reach the classroom toolkit</h3>
+        <div class="event"><span class="date">8 FEB 2023</span><b>PARAKH established within NCERT</b><p>National assessment centre to develop norms and support competency-based assessment, large-scale surveys, board equivalence and holistic progress cards.</p></div>
+        <div class="event"><span class="date">20 FEB 2023</span><b>Jaadui Pitara launched</b><p>A play-based learning-teaching collection for children aged 3–8, with toys, puzzles, books, activity cards and other resources.</p></div>
+        <div class="event"><span class="date">23 AUG 2023</span><b>NCF for School Education (NCF-SE) released</b><p>Translates the NEP vision into curricular areas, stage-wise learning, pedagogy and assessment guidance for school education.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2024"><div class="year-label">2024</div><h3>Student records and system-level evidence</h3>
+        <div class="event"><span class="date">ACADEMIC YEAR 2024–25</span><b>NCERT introduces new Grade 3 and Grade 6 textbooks</b><p>New learning materials aligned with NCF-SE began a phased transition, including expanded attention to arts, physical education and vocational learning.</p></div>
+        <div class="event"><span class="date">7 FEB 2024</span><b>APAAR rollout through Common Service Centres</b><p>“One Nation, One Student ID” was designed as a lifelong academic identity and record pathway. Consent, data protection and correct record management matter.</p></div>
+        <div class="event"><span class="date">DEC 2024</span><b>PARAKH Rashtriya Sarvekshan 2024 conducted</b><p>Large-scale assessment of competencies in Grades 3, 6 and 9. More than 21.15 lakh students from over 74,000 schools in 781 districts participated.</p></div>
+        <div class="event"><span class="date">IMPORTANT CONTEXT</span><b>AI in CBSE did not begin with NEP</b><p>CBSE introduced AI as an optional skill module / subject in 2019–20, before NEP. Later AI and computational-thinking reforms build on an evolving landscape.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2025"><div class="year-label">2025</div><h3>Early signals and AI preparation</h3>
+        <div class="event"><span class="date">4 FEB 2025</span><b>ASER 2024 findings published</b><p>Rural Grade 3 government-school children able to read a Grade 2 text rose from 16.3% in 2022 to 23.4% in 2024. This is encouraging recovery, not proof that one policy alone caused it.</p></div>
+        <div class="event"><span class="date">30 OCT 2025</span><b>National consultation on AI & Computational Thinking</b><p>Ministry announced work with CBSE, NCERT, KVS, NVS and States on an age-appropriate AI and computational-thinking curriculum, envisaged from Grade 3.</p></div>
+      </article>
+      <article class="panel year-card" data-year-card="2026"><div class="year-label">2026</div><h3>AI moves into the school curriculum</h3>
+        <div class="event"><span class="date">1 APR 2026</span><b>CBSE CT & AI curriculum launched for Classes III–VIII</b><p>For 2026–27, the curriculum builds logical reasoning, pattern recognition, problem-solving, digital literacy and responsible AI awareness.</p></div>
+        <div class="event"><span class="date">27 JUL 2026</span><b>PM SHRI network update</b><p>13,092 schools had been selected nationally against a target of more than 14,500. Telangana had 832 selected schools in the published state table.</p></div>
+        <div class="event"><span class="date">2026 EVIDENCE</span><b>PARAKH results and system reviews inform the next phase</b><p>Government reporting notes improvements against NAS 2021 in foundational competencies. NITI Aayog's 2026 review also identifies persistent gaps in classroom practice, equity and digital access.</p></div>
+      </article>
+    </div>
+    <div class="callout warn" style="margin-top:17px"><strong>How to read a timeline:</strong> “Launched”, “released”, “selected” and “implemented” are not the same as “fully completed everywhere”. School education is shared across the Union and States, and the pace differs across boards, districts and schools.</div>
+  </section>
+
+  <section class="section" id="evidence">
+    <div class="section-head"><div><div class="kicker">05 · What the numbers say</div><h2>Evidence check: progress, not a victory lap</h2><p class="section-intro">These indicators show movement in the education system. They help us ask better questions, but they do not prove that NEP alone caused every change.</p></div></div>
+    <div class="stats">
+      <article class="panel stat"><div class="value">23.4%</div><div class="label">Grade 3 government-school children reading a Grade 2 text</div><div class="trend">↑ from 16.3% in 2022</div><p>ASER 2024, rural India; reading recovery after the pandemic.</p></article>
+      <article class="panel stat"><div class="value">77.4%</div><div class="label">Rural 3-year-olds enrolled in some pre-primary institution</div><div class="trend">↑ from 68.1% in 2018</div><p>ASER 2024. Includes Anganwadi, government pre-primary and private LKG/UKG.</p></article>
+      <article class="panel stat"><div class="value">13,092</div><div class="label">PM SHRI schools selected nationally</div><div class="trend">About 90% of 14,500+ target</div><p>Government update dated 27 July 2026.</p></article>
+      <article class="panel stat"><div class="value">67.4%</div><div class="label">Schools reporting internet access</div><div class="trend">49.7% in 2022–23</div><p>UDISE+ / Ministry reporting for 2025–26. Connectivity does not guarantee effective use.</p></article>
+    </div>
+    <div class="grid2" style="margin-top:17px">
+      <article class="panel data-box"><h3>Foundational reading: government schools</h3><p>Share of rural Grade 3 children who could read a Grade 2-level text.</p>
+        <div class="bar-wrap" aria-label="Reading proficiency 2018 20.9 percent, 2022 16.3 percent, 2024 23.4 percent">
+          <div class="bar-col"><b>20.9%</b><div class="bar" style="height:89%"></div><span>2018</span></div>
+          <div class="bar-col"><b>16.3%</b><div class="bar alt" style="height:70%"></div><span>2022</span></div>
+          <div class="bar-col"><b>23.4%</b><div class="bar" style="height:100%"></div><span>2024</span></div>
+        </div><div class="data-source">Source: NITI Aayog's 2026 analysis of ASER 2018, 2022 and 2024. 2022 reflects a pandemic-period learning setback.</div></article>
+      <article class="panel data-box"><h3>School internet access</h3><p>Share of schools reporting an internet facility in UDISE+.</p>
+        <div class="bar-wrap" aria-label="School internet access: 49.7 percent 2022-23, 53.9 percent 2023-24, 63.5 percent 2024-25, 67.4 percent 2025-26">
+          <div class="bar-col"><b>49.7%</b><div class="bar alt" style="height:74%"></div><span>2022–23</span></div>
+          <div class="bar-col"><b>53.9%</b><div class="bar" style="height:80%"></div><span>2023–24</span></div>
+          <div class="bar-col"><b>63.5%</b><div class="bar" style="height:94%"></div><span>2024–25</span></div>
+          <div class="bar-col"><b>67.4%</b><div class="bar" style="height:100%"></div><span>2025–26</span></div>
+        </div><div class="data-source">Source: Ministry of Education / UDISE+ series. The latest figure is school-level connectivity, not household access or connection quality.</div></article>
+    </div>
+    <div class="callout" style="margin-top:17px"><strong>Local lens · Telangana:</strong> The July 2026 PM SHRI state table lists <b>832 selected schools in Telangana</b>. This is a state-level count, not a Nizamabad district count. Use the district list and the school itself to verify local participation.</div>
+    <div class="small-note" style="margin-top:12px">PARAKH Rashtriya Sarvekshan 2024 reached 21.15 lakh+ students, 2.70 lakh+ teachers and school leaders, 74,000+ schools and 781 districts. It supplies system-level evidence across Grades 3, 6 and 9. See the official report link in Sources.</div>
+  </section>
+
+  <section class="section" id="frameworks">
+    <div class="section-head"><div><div class="kicker">06 · Know the three frameworks deeply</div><h2>NEP, NCF and HPC in practical language</h2><p class="section-intro">Use these cards as your revision notes. The most important test is whether you can translate each idea into something a teacher or school can actually do.</p></div></div>
+    <div class="framework-grid">
+      <article class="panel framework-card"><span class="code">POLICY · THE WHY</span><div class="emoji">🧭</div><h3>NEP 2020</h3><p>A national policy approved on 29 July 2020. It sets the long-term direction for school and higher education.</p><ul><li>Access, equity, quality, affordability and accountability.</li><li>Early childhood care and education.</li><li>Foundational literacy and numeracy.</li><li>Multilingualism and Indian knowledge systems.</li><li>Experiential, flexible and multidisciplinary learning.</li><li>Vocational exposure and assessment reform.</li></ul></article>
+      <article class="panel framework-card"><span class="code">CURRICULUM · THE HOW</span><div class="emoji">🧩</div><h3>NCF</h3><p>A national curriculum framework developed by NCERT to translate the policy vision into educational design.</p><ul><li>NCF-FS 2022: ages 3–8.</li><li>NCF-SE 2023: school education.</li><li>Stage-wise learning goals and competencies.</li><li>Pedagogy that fits developmental stages.</li><li>Curricular areas, textbooks and learning resources.</li><li>Guidance for assessment and classroom practice.</li></ul></article>
+      <article class="panel framework-card"><span class="code">ASSESSMENT · THE EVIDENCE</span><div class="emoji">🌿</div><h3>HPC</h3><p>The Holistic Progress Card aims to record learning transitions and the whole learner, rather than reducing progress to marks alone.</p><ul><li>Tracks cognitive development.</li><li>Includes social and emotional growth.</li><li>Looks at physical and creative development.</li><li>Includes ethical development and values.</li><li>Uses observation and multiple forms of evidence.</li><li>Helps plan the next learning step.</li></ul></article>
+    </div>
+    <h3 style="margin:30px 0 9px">What can a Holistic Progress Card notice?</h3>
+    <p class="muted" style="margin-top:0">PARAKH describes HPC as a 360-degree approach across learning domains. The examples below are classroom-friendly ways to observe those areas; a teacher should use the stage-specific HPC format and school/board guidance.</p>
+    <div class="hpc-domains">
+      <div class="domain"><b>🧠 Cognitive</b><span>Reasoning, remembering, questioning, applying concepts.</span></div>
+      <div class="domain"><b>💬 Language & communication</b><span>Listening, speaking, reading, writing and expressing ideas.</span></div>
+      <div class="domain"><b>🤝 Social</b><span>Cooperation, empathy, teamwork and respect.</span></div>
+      <div class="domain"><b>💛 Emotional</b><span>Self-awareness, confidence, resilience and emotion regulation.</span></div>
+      <div class="domain"><b>🏃 Physical</b><span>Movement, coordination, health habits and participation.</span></div>
+      <div class="domain"><b>🎨 Creative & ethical</b><span>Imagination, original work, responsibility and thoughtful choices.</span></div>
+    </div>
+    <div class="callout warn" style="margin-top:18px"><strong>Do not confuse HPC with “no exams”.</strong> Assessment still happens. The shift is towards a richer body of evidence: what the child knows, can do, explain, create and improve over time.</div>
+  </section>
+
+  <section class="section" id="classroom">
+    <div class="section-head"><div><div class="kicker">07 · See the difference in action</div><h2>Same topic. Two very different learning experiences.</h2><p class="section-intro">These are illustrative lesson designs, not claims that every classroom used the older method. They help you practise converting a concept into an experiential, competency-focused lesson.</p></div></div>
+    <div class="image-grid">
+      <figure class="photo"><img src="https://thecsruniverse.com/adminxsafe/uploads/FLN.jpg" alt="Teacher and children learning together with books and hands-on learning materials" loading="lazy"/><figcaption>Foundational learning through interaction and learning materials. Illustrative photo · <a href="https://thecsruniverse.com/articles/india-s-most-important-infrastructure-isn-t-physical-why-foundational-learning-will-shape-the-next-growth-story" target="_blank" rel="noopener">image source</a></figcaption></figure>
+      <div class="photo-stack">
+        <figure class="photo"><img src="https://www.hindustantimes.com/ht-img/img/2025/07/24/original/District-education-officer--elementary--Ravinder-K_1753380950778.jpg" alt="Teacher guiding a student through a hands-on classroom activity" loading="lazy"/><figcaption>Teacher-guided, activity-based learning. Illustrative photo · <a href="https://www.hindustantimes.com/cities/chandigarh-news/ludhiana-hygiene-studies-poor-at-samrala-school-head-to-get-notice-deo-101753380954490.html" target="_blank" rel="noopener">image source</a></figcaption></figure>
+        <figure class="photo"><img src="https://assets.letsendorse.com/20181123/yngpUuBGzDEqIiXBQuoS15429791531634.jpg" alt="Teacher and children working with number tiles during a maths activity" loading="lazy"/><figcaption>Concrete materials make abstract maths visible. Illustrative photo · <a href="https://www.letsendorse.com/project/ginti-making-government-school-children-superstars-at-mathematics" target="_blank" rel="noopener">image source</a></figcaption></figure>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:20px">
+      <article class="card"><span class="tag">Example 1 · Science</span><h3>Topic: Parts of a plant</h3><p><b>Recall-led version:</b> copy a labelled diagram, memorise terms and answer a short test.</p><div class="divider"></div><p><b>Experiential version:</b> observe a plant, sketch it, gently inspect roots and leaves, keep a growth journal and explain what each part does.</p><p class="emphasis" style="margin-top:10px">Competencies: observation, vocabulary, explanation, curiosity.</p></article>
+      <article class="card"><span class="tag">Example 2 · Mathematics</span><h3>Topic: Addition and subtraction</h3><p><b>Recall-led version:</b> practise sums from the board and memorise the procedure.</p><div class="divider"></div><p><b>Experiential version:</b> use seeds, bottle caps or blocks to model quantities, create a small shop, calculate totals and explain the strategy.</p><p class="emphasis" style="margin-top:10px">Competencies: number sense, reasoning, application, communication.</p></article>
+      <article class="card"><span class="tag">Example 3 · Language</span><h3>Topic: Story comprehension</h3><p><b>Recall-led version:</b> memorise the summary and answer textbook questions.</p><div class="divider"></div><p><b>Experiential version:</b> retell the story, role-play a character, create a new ending and explain why a character made a decision.</p><p class="emphasis" style="margin-top:10px">Competencies: listening, speaking, empathy, creativity.</p></article>
+      <article class="card"><span class="tag">Example 4 · Environmental studies</span><h3>Topic: Water conservation</h3><p><b>Recall-led version:</b> write five slogans about saving water.</p><div class="divider"></div><p><b>Experiential version:</b> map water use at school, identify a leaking tap, estimate water saved, interview the caretaker and present a practical proposal.</p><p class="emphasis" style="margin-top:10px">Competencies: research, teamwork, measurement, civic responsibility.</p></article>
+    </div>
+    <div class="callout" style="margin-top:18px"><strong>Localise the lesson:</strong> Use examples children can see around them: a local market, a bus stop, a farm, a lake, a neighbourhood water source, a local language story or a community problem. Context makes concepts easier to understand and remember.</div>
+  </section>
+
+  <section class="section" id="hpc-example">
+    <div class="section-head"><div><div class="kicker">08 · Make HPC tangible</div><h2>One activity, many kinds of evidence</h2><p class="section-intro">Imagine Grade 4 students working in teams to create a “Save Water” poster and present a short conservation plan.</p></div></div>
+    <div class="lesson">
+      <aside class="lesson-aside"><div class="tag" style="color:#80e0d2">Sample learning task</div><div class="topic">Save Water, Save Tomorrow</div><p>Team challenge: identify one water-waste problem at school and suggest a realistic improvement.</p><p><b>Learning evidence:</b><br/>Poster · group discussion · simple measurement · oral presentation · reflection.</p></aside>
+      <div class="panel lesson-steps">
+        <div class="lesson-step"><span class="num">1</span><div><h4>Observe</h4><p>Can the student notice a problem, ask relevant questions and collect information?</p></div></div>
+        <div class="lesson-step"><span class="num">2</span><div><h4>Think and plan</h4><p>Can the student suggest an achievable solution and explain the reason?</p></div></div>
+        <div class="lesson-step"><span class="num">3</span><div><h4>Collaborate</h4><p>Does the student listen, share roles, respect teammates and contribute constructively?</p></div></div>
+        <div class="lesson-step"><span class="num">4</span><div><h4>Create and communicate</h4><p>Can the student make a clear poster, explain the idea and answer questions?</p></div></div>
+        <div class="lesson-step"><span class="num">5</span><div><h4>Reflect and improve</h4><p>Can the student identify what worked, what was difficult and what to try next?</p></div></div>
+      </div>
+    </div>
+    <div class="panel" style="padding:20px;margin-top:18px"><b>Simple observation rubric (illustrative)</b><table class="rubric"><thead><tr><th>Skill</th><th>Beginning</th><th>Developing</th><th>Confident</th></tr></thead><tbody><tr><td>Understanding</td><td>Needs prompts to identify the problem.</td><td>Identifies the problem with some support.</td><td>Explains the problem and why it matters.</td></tr><tr><td>Teamwork</td><td>Needs help to take turns.</td><td>Participates with reminders.</td><td>Listens, shares roles and supports others.</td></tr><tr><td>Communication</td><td>Shares a few words or ideas.</td><td>Explains the idea with some clarity.</td><td>Explains clearly and responds to questions.</td></tr><tr><td>Creativity</td><td>Copies an example.</td><td>Adapts an idea.</td><td>Suggests an original, practical solution.</td></tr></tbody></table><p class="small-note">This is a teaching illustration, not an official PARAKH scoring scale. Use age-appropriate indicators and the official stage-specific HPC guidance.</p></div>
+  </section>
+
+  <section class="section" id="ai-history">
+    <div class="section-head"><div><div class="kicker">09 · From chalkboard to AI</div><h2>How education technology evolved</h2><p class="section-intro">AI did not appear from nowhere. Each generation of technology changed what teachers and learners could access, create and practise.</p></div></div>
+    <div class="grid3">
+      <article class="card"><div class="emoji">🪨</div><span class="tag">Before mass digital learning</span><h3>Books, blackboards and broadcast</h3><p>Printed textbooks, classroom explanation, libraries, radio and educational television formed the main learning environment for many students.</p></article>
+      <article class="card"><div class="emoji">💻</div><span class="tag">1990s–2010s</span><h3>Computers and the internet</h3><p>Computer labs, search engines, multimedia, online courses, digital boards and learning-management systems expanded access to information.</p></article>
+      <article class="card"><div class="emoji">📱</div><span class="tag">2020 pandemic period</span><h3>Learning becomes multi-channel</h3><p>Online classes, TV, radio, recorded lessons and mobile platforms became essential continuity tools. Access to devices and connectivity became a major equity issue.</p></article>
+      <article class="card"><div class="emoji">🤖</div><span class="tag">2022 onward</span><h3>Generative AI arrives</h3><p>Tools can generate explanations, examples, images, code, translations and feedback. They can also produce confident errors and biased outputs.</p></article>
+      <article class="card"><div class="emoji">🧠</div><span class="tag">2024–2025</span><h3>AI literacy becomes a curriculum question</h3><p>UNESCO published AI competency frameworks for students and teachers, emphasising human-centred thinking, ethics, application and design.</p></article>
+      <article class="card"><div class="emoji">🌐</div><span class="tag">2026–27</span><h3>Structured CT & AI learning</h3><p>CBSE launched a Computational Thinking and AI curriculum for Classes III–VIII for the 2026–27 session, moving from occasional exposure towards structured learning.</p></article>
+    </div>
+    <div class="callout warn" style="margin-top:17px"><strong>A useful historical correction:</strong> CBSE had already introduced AI as an optional skill module / subject from 2019–20, before NEP 2020. The 2025–26 and 2026–27 developments represent a broader move towards age-appropriate computational thinking and AI education, not the first time an Indian school encountered AI.</div>
+  </section>
+
+  <section class="section" id="ai-future">
+    <div class="section-head"><div><div class="kicker">10 · Present signals → future possibilities</div><h2>What could education look like in an AI-shaped world?</h2><p class="section-intro">These are reasoned possibilities, not guaranteed predictions. The strongest future system will combine technology with human judgement, relationships, practical experience and ethical responsibility.</p></div></div>
+    <div class="future-grid">
+      <article class="panel future-card"><h3>✨ 1. Personalised practice</h3><ul><li>AI may give each learner additional examples at the right level.</li><li>Students could practise reading, maths or language at their own pace.</li><li>Teachers could use learning signals to identify who needs help.</li></ul><p class="small-note">Human role: decide whether the recommendation is suitable and emotionally supportive.</p></article>
+      <article class="panel future-card"><h3>🗣️ 2. Multilingual learning support</h3><ul><li>Voice-based tools could explain concepts in local languages.</li><li>Translation can make resources more accessible.</li><li>Students could compare explanations and improve vocabulary.</li></ul><p class="small-note">Human role: check cultural context, accuracy and language quality.</p></article>
+      <article class="panel future-card"><h3>🧪 3. More project-based evidence</h3><ul><li>Students may demonstrate learning through models, prototypes and field projects.</li><li>Oral explanation and reflection can reveal whether the student understands.</li><li>Portfolios can show improvement over time, not only one test day.</li></ul><p class="small-note">Human role: assess the learner's own reasoning, process and contribution.</p></article>
+      <article class="panel future-card"><h3>👩‍🏫 4. Teachers as learning designers</h3><ul><li>AI may help draft lesson variations, quizzes and accessible materials.</li><li>Teachers may spend less time on repetitive preparation.</li><li>More time could go to mentoring, discussion, feedback and student wellbeing.</li></ul><p class="small-note">Human role: create belonging, set boundaries, motivate and make professional decisions.</p></article>
+    </div>
+    <h3 style="margin:28px 0 13px">The risks schools must design for</h3>
+    <div class="risk-grid">
+      <article class="risk"><b>⚠️ Hallucinations</b><p>AI can invent facts, references or explanations. Students must cross-check claims.</p></article>
+      <article class="risk"><b>🔐 Privacy</b><p>Do not upload children's personal data, photos, health details or school records to unapproved tools.</p></article>
+      <article class="risk"><b>⚖️ Bias and exclusion</b><p>AI may perform poorly for some languages, accents, disability contexts or communities.</p></article>
+      <article class="risk"><b>🧩 Over-dependence</b><p>Students may outsource thinking instead of learning how to frame, reason and solve problems.</p></article>
+      <article class="risk"><b>📵 Unequal access</b><p>Devices, connectivity, electricity and adult support remain unevenly distributed.</p></article>
+      <article class="risk"><b>🧍 Less human connection</b><p>Excessive screen time can crowd out conversation, movement, play and relationships.</p></article>
+    </div>
+    <div class="callout" style="margin-top:18px"><strong>Guiding principle:</strong> AI should extend human capability, not replace a child's thinking or a teacher's responsibility. A child should be able to explain, question and defend the work they submit.</div>
+  </section>
+
+  <section class="section" id="ai-classroom">
+    <div class="section-head"><div><div class="kicker">11 · A practical AI lesson</div><h2>How to teach AI without turning the class into a screen session</h2><p class="section-intro">Example: Grade 6 students explore “How can our school reduce food waste?” The AI tool is one resource in a wider learning process.</p></div></div>
+    <div class="grid2">
+      <article class="card"><span class="tag">Student learning journey</span><h3>Ask → Observe → Compare → Create → Explain</h3><ol style="padding-left:19px;color:#40516a;font-size:.88rem"><li>Ask students what food waste they notice in the school.</li><li>Observe a lunch period and record anonymised counts or estimates.</li><li>Ask an approved AI tool for possible causes and solutions.</li><li>Compare AI suggestions with local evidence and teacher-approved sources.</li><li>Create a poster, simple chart or proposal.</li><li>Explain which suggestion they accepted or rejected, and why.</li></ol></article>
+      <article class="card"><span class="tag">What the teacher assesses</span><h3>AI output is not the student's learning</h3><ul style="padding-left:19px;color:#40516a;font-size:.88rem"><li>Can students frame a useful question?</li><li>Can they collect and interpret evidence?</li><li>Can they spot a weak or unsupported AI claim?</li><li>Can they explain their own reasoning?</li><li>Can they work respectfully in a team?</li><li>Can they reflect on ethical and practical impact?</li></ul><p class="emphasis">The evidence is the student's thinking and work process, not just the polished answer.</p></article>
+    </div>
+    <div class="divider"></div>
+    <h3>Skills that become more valuable as AI improves</h3>
+    <div class="hpc-domains">
+      <div class="domain"><b>🧠 Critical thinking</b><span>Ask: Is this true? What evidence supports it?</span></div>
+      <div class="domain"><b>🎯 Problem framing</b><span>Define the real problem before choosing a tool.</span></div>
+      <div class="domain"><b>📊 Data literacy</b><span>Read, compare and interpret information.</span></div>
+      <div class="domain"><b>🧑‍🤝‍🧑 Communication</b><span>Explain ideas, listen and collaborate.</span></div>
+      <div class="domain"><b>🎨 Creativity</b><span>Imagine new approaches and make original work.</span></div>
+      <div class="domain"><b>🛡️ Ethics & judgement</b><span>Protect privacy, identify bias and take responsibility.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="reality-check">
+    <div class="section-head"><div><div class="kicker">12 · The honest implementation picture</div><h2>A policy can be ambitious. A classroom still needs support.</h2><p class="section-intro">The 2026 NITI Aayog review is useful because it looks beyond announcements and examines learning outcomes, access, equity, infrastructure and classroom practice.</p></div></div>
+    <div class="grid2">
+      <article class="card"><div class="emoji">✅</div><h3>What is moving forward</h3><ul style="padding-left:19px;color:#40516a;font-size:.88rem"><li>Curriculum frameworks for foundational and school stages are published.</li><li>NIPUN Bharat created a national focus on foundational literacy and numeracy.</li><li>PM SHRI is building a network of exemplar schools.</li><li>Assessment systems and large-scale competency measurement have expanded.</li><li>Digital infrastructure and AI curriculum work are advancing.</li></ul></article>
+      <article class="card"><div class="emoji">🛠️</div><h3>What still needs work</h3><ul style="padding-left:19px;color:#40516a;font-size:.88rem"><li>Curriculum, teaching practice and assessment are not consistently aligned in classrooms.</li><li>Foundational learning gaps remain, particularly for children who need additional support.</li><li>State and district performance varies widely.</li><li>Digital access, teacher capacity and safe technology use need sustained attention.</li><li>Arts, life skills, wellbeing and parent engagement can be under-integrated.</li></ul></article>
+    </div>
+    <div class="callout coral" style="margin-top:17px"><strong>What the evidence warns us:</strong> NITI Aayog's 2026 report notes that, in many schools, curriculum goals do not consistently translate into classroom practice; teaching can remain textbook-led and assessment can still emphasise recall. It also highlights digital divides, equity gaps and uneven implementation. Reform is a journey, not a switch.</div>
+  </section>
+
+  <section class="section" id="school-action">
+    <div class="section-head"><div><div class="kicker">13 · Turn understanding into action</div><h2>A practical school-readiness checklist</h2><p class="section-intro">Use this as a discussion tool with teachers, school leaders or a curriculum team. Tick the items that your school can already demonstrate with evidence.</p></div></div>
+    <div class="panel" style="padding:22px">
+      <div class="checklist">
+        <label class="check"><input type="checkbox"/> <span>We know the learning outcomes expected for each stage and grade.</span></label>
+        <label class="check"><input type="checkbox"/> <span>We check foundational reading and numeracy early, and provide support when a child struggles.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Teachers use play, projects, discussion, experiments and real-life examples where appropriate.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Assessment includes feedback, observation and application, not only marks.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Progress reporting identifies learner strengths and next steps, not only weaknesses.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Parents understand how to support learning at home without excessive pressure.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Children have opportunities for arts, sports, teamwork and wellbeing.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Digital resources are accessible, age-appropriate and used with a clear learning purpose.</span></label>
+        <label class="check"><input type="checkbox"/> <span>Teachers have time and training to design competency-based lessons.</span></label>
+        <label class="check"><input type="checkbox"/> <span>There are clear rules for AI use, privacy, attribution and checking information.</span></label>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px"><span class="small-note" id="checkCount">0 of 10 completed</span><button class="filter-btn" id="resetChecks">Reset checklist ↺</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="myths">
+    <div class="section-head"><div><div class="kicker">14 · Clear up common confusion</div><h2>Six myths worth correcting</h2><p class="section-intro">Open each question to reveal the more accurate explanation.</p></div></div>
+    <div class="myth-list">
+      <details class="panel myth"><summary>“NEP 2020 is the same thing as NCF.”</summary><p>No. NEP sets the policy vision. NCF gives curriculum and pedagogical guidance for putting that vision into practice.</p></details>
+      <details class="panel myth"><summary>“The 5+3+3+4 system changed every school overnight.”</summary><p>No. It is the new curricular and pedagogical design. Adoption requires curriculum updates, textbooks, teacher development and State/board implementation over time.</p></details>
+      <details class="panel myth"><summary>“Mother-tongue teaching is compulsory in every school until Grade 8.”</summary><p>The policy says the home, mother, local or regional language should be the medium of instruction wherever possible at least until Grade 5, preferably until Grade 8 and beyond. The wording and local implementation matter.</p></details>
+      <details class="panel myth"><summary>“HPC means examinations will disappear.”</summary><p>No. HPC broadens the evidence of progress. Formal tests may still be used, but should not be the only way to understand learning.</p></details>
+      <details class="panel myth"><summary>“AI in Indian schools started after NEP.”</summary><p>No. CBSE introduced AI as an optional skill module / subject in 2019–20. NEP and later curriculum work reinforce a broader future-skills direction.</p></details>
+      <details class="panel myth"><summary>“Any improvement after 2020 proves NEP caused it.”</summary><p>No. Outcomes are influenced by many factors: pre-existing programmes, state initiatives, pandemic recovery, household conditions, teachers, funding, infrastructure and policy reforms. Use evidence carefully.</p></details>
+    </div>
+  </section>
+
+  <section class="section" id="quick-test">
+    <div class="section-head"><div><div class="kicker">15 · Test your understanding</div><h2>Quick knowledge check</h2><p class="section-intro">Choose an answer for each question, then check your score. Try answering from memory before looking back.</p></div></div>
+    <div class="panel quiz" id="quiz">
+      <div class="question" data-answer="1"><h4>1. What does NEP mainly provide?</h4><div class="options"><button class="option" data-value="0">A classroom report card</button><button class="option" data-value="1">A national education vision and policy direction</button><button class="option" data-value="2">A school textbook series</button><button class="option" data-value="3">A board examination timetable</button></div></div>
+      <div class="question" data-answer="2"><h4>2. Which framework translates the policy vision into curriculum and pedagogy?</h4><div class="options"><button class="option" data-value="0">HPC</button><button class="option" data-value="1">APAAR</button><button class="option" data-value="2">NCF</button><button class="option" data-value="3">ASER</button></div></div>
+      <div class="question" data-answer="0"><h4>3. The Foundational Stage in 5+3+3+4 covers which age range?</h4><div class="options"><button class="option" data-value="0">Approximately 3–8 years</button><button class="option" data-value="1">8–11 years</button><button class="option" data-value="2">11–14 years</button><button class="option" data-value="3">14–18 years</button></div></div>
+      <div class="question" data-answer="3"><h4>4. What is the main purpose of HPC?</h4><div class="options"><button class="option" data-value="0">To rank all schools</button><button class="option" data-value="1">To replace teachers</button><button class="option" data-value="2">To measure only exam marks</button><button class="option" data-value="3">To understand a learner's broader progress</button></div></div>
+      <div class="question" data-answer="1"><h4>5. Which initiative focuses on foundational literacy and numeracy?</h4><div class="options"><button class="option" data-value="0">APAAR</button><button class="option" data-value="1">NIPUN Bharat</button><button class="option" data-value="2">PM SHRI only</button><button class="option" data-value="3">SWAYAM</button></div></div>
+      <div class="question" data-answer="2"><h4>6. Which statement about AI in schools is most accurate?</h4><div class="options"><button class="option" data-value="0">AI guarantees correct answers</button><button class="option" data-value="1">AI should replace the teacher</button><button class="option" data-value="2">AI needs human oversight, ethics and fact-checking</button><button class="option" data-value="3">Students should upload all personal data to AI tools</button></div></div>
+      <div class="question" data-answer="0"><h4>7. What is an important implementation caution?</h4><div class="options"><button class="option" data-value="0">Policy approval does not mean every school changes instantly</button><button class="option" data-value="1">Every school must have identical resources immediately</button><button class="option" data-value="2">All assessments ended in 2020</button><button class="option" data-value="3">Every post-2020 programme was created by NEP</button></div></div>
+      <div class="question" data-answer="3"><h4>8. In an AI-supported lesson, what should be assessed?</h4><div class="options"><button class="option" data-value="0">Only the AI-generated answer</button><button class="option" data-value="1">How fast the child types</button><button class="option" data-value="2">How many prompts the child copies</button><button class="option" data-value="3">The child's reasoning, verification, creation and explanation</button></div></div>
+      <button class="btn btn-primary" id="submitQuiz" style="margin-top:18px">Check my score</button> <button class="filter-btn" id="resetQuiz">Try again ↺</button>
+      <div class="quiz-result" id="quizResult" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" id="sources">
+    <div class="section-head"><div><div class="kicker">16 · Read from the source</div><h2>Official documents and evidence</h2><p class="section-intro">For serious study, use the original policy and framework documents first, then use reports to understand implementation. Links below open the source websites or documents.</p></div></div>
+    <div class="source-list">
+      <div class="source"><a href="https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English.pdf" target="_blank" rel="noopener">National Education Policy 2020 · Full PDF ↗</a><small>Ministry of Education · Primary policy document.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=210301" target="_blank" rel="noopener">NEP 2020 Cabinet approval · 29 July 2020 ↗</a><small>Press Information Bureau · Official summary.</small></div>
+      <div class="source"><a href="https://www.education.gov.in/sites/upload_files/mhrd/files/NCF_for_Foundational_Stage_20_October_2022.pdf" target="_blank" rel="noopener">NCF for Foundational Stage 2022 · PDF ↗</a><small>Ministry of Education / NCERT · Ages 3–8.</small></div>
+      <div class="source"><a href="https://ncert.nic.in/focus-group.php?ln=en" target="_blank" rel="noopener">NCF for School Education 2023 · NCERT official page ↗</a><small>NCERT · National Curriculum Frameworks listing and official PDFs.</small></div>
+      <div class="source"><a href="https://ncert.nic.in/parakh/about.php" target="_blank" rel="noopener">PARAKH · About and areas of work ↗</a><small>NCERT · Assessment centre and HPC work.</small></div>
+      <div class="source"><a href="https://parakh.ncert.gov.in/lms/courses/hpc/" target="_blank" rel="noopener">Holistic Progress Card · PARAKH course ↗</a><small>PARAKH / NCERT · 360-degree assessment approach.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1732830&lang=2&reg=48" target="_blank" rel="noopener">NIPUN Bharat launch · 5 July 2021 ↗</a><small>Press Information Bureau · FLN mission.</small></div>
+      <div class="source"><a href="https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/nep_achievement.pdf" target="_blank" rel="noopener">PM e-VIDYA implementation note ↗</a><small>Ministry of Education · Multi-mode digital learning.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2003802&lang=2&reg=48" target="_blank" rel="noopener">APAAR / One Nation, One Student ID ↗</a><small>Press Information Bureau · 7 February 2024 rollout.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2099725&lang=2&reg=48" target="_blank" rel="noopener">ASER 2024 findings ↗</a><small>Press Information Bureau · Rural enrolment and learning data.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290099&lang=1&reg=3" target="_blank" rel="noopener">PARAKH Rashtriya Sarvekshan 2024 ↗</a><small>Ministry of Education · Large-scale assessment findings.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290004&lang=1&reg=3" target="_blank" rel="noopener">PM SHRI school counts · July 2026 ↗</a><small>Ministry of Education · National and State-wise counts.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282141&lang=1&reg=48" target="_blank" rel="noopener">School internet access · UDISE+ 2025–26 ↗</a><small>Ministry of Education · School connectivity trend.</small></div>
+      <div class="source"><a href="https://ncert.nic.in/pdf/announcement/NCERT-Advisory-for-Schools.pdf" target="_blank" rel="noopener">NCERT advisory for NCF-SE implementation ↗</a><small>School subjects, new textbooks, learning standards and assessment guidance.</small></div>
+      <div class="source"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247963&lang=1&reg=3" target="_blank" rel="noopener">CBSE CT & AI curriculum · 1 April 2026 ↗</a><small>Ministry of Education · Classes III–VIII.</small></div>
+      <div class="source"><a href="https://www.cbse.gov.in/cbsenew/rti/PQ/Winter_Session_2025_18052026.pdf" target="_blank" rel="noopener">CBSE AI subject history and 2025–26 uptake ↗</a><small>CBSE response document · AI was offered before NEP 2020.</small></div>
+      <div class="source"><a href="https://www.unesco.org/en/articles/ai-competency-framework-students?hub=66973" target="_blank" rel="noopener">UNESCO AI Competency Framework for Students ↗</a><small>UNESCO · Human-centred, ethical AI competencies.</small></div>
+      <div class="source"><a href="https://www.unesco.org/en/articles/ai-competency-framework-teachers?hub=779" target="_blank" rel="noopener">UNESCO AI Competency Framework for Teachers ↗</a><small>UNESCO · AI pedagogy and professional learning.</small></div>
+      <div class="source"><a href="https://www.niti.gov.in/node/2288" target="_blank" rel="noopener">School Education System in India · NITI Aayog 2026 ↗</a><small>Decadal analysis of learning outcomes, access, equity and implementation challenges.</small></div>
+    </div>
+    <div class="callout" style="margin-top:17px"><strong>Study method:</strong> Read the NEP overview first. Then read NCF-FS or NCF-SE according to the age group. Finally, open the PARAKH HPC resource and practise evaluating one classroom activity. Use the timeline and quick test on this page for revision.</div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-inner"><div><div class="brand"><span class="brand-mark">LS</span><span>THE LEARNING SHIFT</span></div><p>A study companion for understanding India's education reform journey, classroom practice and the evolving role of AI. Built for learning and discussion, not as a substitute for official policy documents.</p></div><div><b>Remember the chain</b><p>NEP = Vision<br/>NCF = Curriculum and pedagogy<br/>HPC = Holistic evidence of progress<br/>AI = A tool that must remain human-guided</p></div></div>
+  <div class="wrap" style="border-top:1px solid rgba(255,255,255,.14);margin-top:20px;padding-top:14px;color:#90a1bc;font-size:.75rem">Prepared as a learning guide · Evidence reviewed through 20 November 2026 · Some images are illustrative and remain the property of their respective publishers.</div>
+</footer>
+<button class="backtop" id="backTop" aria-label="Back to top">↑</button>
+<script>
+// Mobile navigation
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+
+// Reading progress and back-to-top button
+const progress=document.getElementById('progress');
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';
+  backTop.classList.toggle('show',window.scrollY>650);
+},{passive:true});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Comparison table filters
+const compareButtons=[...document.querySelectorAll('[data-filter]')];
+const compareRows=[...document.querySelectorAll('.compare-table tbody tr')];
+compareButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  compareButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const f=btn.dataset.filter;compareRows.forEach(row=>row.style.display=(f==='all'||row.dataset.category===f)?'':'none');
+}));
+
+// Timeline year filters
+const yearButtons=[...document.querySelectorAll('[data-year]')];
+const yearCards=[...document.querySelectorAll('[data-year-card]')];
+yearButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  yearButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const y=btn.dataset.year;yearCards.forEach(card=>card.style.display=(y==='all'||card.dataset.yearCard===y)?'':'none');
+}));
+
+// School checklist counter
+const checks=[...document.querySelectorAll('.check input')];
+const checkCount=document.getElementById('checkCount');
+function updateChecks(){const done=checks.filter(c=>c.checked).length;checkCount.textContent=`${done} of ${checks.length} completed`;}
+checks.forEach(c=>c.addEventListener('change',updateChecks));
+document.getElementById('resetChecks').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);updateChecks();});
+
+// Quiz logic: one answer per question, with retry support
+const questions=[...document.querySelectorAll('.question')];
+questions.forEach(q=>q.querySelectorAll('.option').forEach(opt=>opt.addEventListener('click',()=>{
+  q.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');
+})));
+document.getElementById('submitQuiz').addEventListener('click',()=>{
+  let answered=0,score=0;questions.forEach(q=>{const chosen=q.querySelector('.option.selected');if(chosen){answered++;if(Number(chosen.dataset.value)===Number(q.dataset.answer))score++;}});
+  const result=document.getElementById('quizResult');result.style.display='block';
+  if(answered<questions.length){result.textContent=`You answered ${answered} of ${questions.length}. Complete the remaining questions to see your score.`;return;}
+  let message=score>=7?'Excellent. You can explain the frameworks and connect them to practice.':score>=5?'Good progress. Review the timeline and the NEP–NCF–HPC distinction once more.':'Keep going. Revisit the three-framework map, timeline and classroom examples, then try again.';
+  result.textContent=`Your score: ${score}/${questions.length}. ${message}`;
+});
+document.getElementById('resetQuiz').addEventListener('click',()=>{
+  questions.forEach(q=>q.querySelectorAll('.option').forEach(o=>o.classList.remove('selected')));
+  const result=document.getElementById('quizResult');result.style.display='none';result.textContent='';
+});
+</script>
+</body>
+</html>
